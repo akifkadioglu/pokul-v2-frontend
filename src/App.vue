@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark>
+    <v-app-bar app color="primary" dark elevation="0">
       <v-spacer />
       <span class="header">P-Okul</span>
       <v-spacer />
