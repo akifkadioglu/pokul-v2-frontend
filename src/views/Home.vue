@@ -1,6 +1,6 @@
 <template>
   <div class="text">
-    <div class="text-center">Şu an da geliştiriliyor..</div>
+    <div class="text-center">Şu anda geliştiriliyor..</div>
   </div>
 </template>
 
