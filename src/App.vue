@@ -52,9 +52,6 @@ export default {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
-body {
-  font-family: "Readex Pro";
-}
 .scroll {
   overflow-y: scroll;
 }
