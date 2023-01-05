@@ -4,6 +4,7 @@
       {{ $store.state.snackbarText }}
       <template v-slot:action="{ attrs }">
         <v-btn
+          aria-label="snackbar-button"
           color="error"
           icon
           v-bind="attrs"

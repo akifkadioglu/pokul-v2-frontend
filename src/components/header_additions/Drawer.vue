@@ -9,7 +9,7 @@
     <v-list dense flat>
       <v-list-item two-line>
         <v-list-item-avatar>
-          <img src="@/assets/logo.webp" width="100%;" alt="alt" />
+          <img src="@/assets/logo.webp" width="100%;" alt="avatar" />
         </v-list-item-avatar>
 
         <v-list-item-content>

@@ -7,10 +7,11 @@
       class="app-bar"
       height="75px"
     >
-      <v-btn @click="drawer = !drawer" icon>
+      <v-btn aria-label="drawer-button" @click="drawer = !drawer" icon>
         <v-icon>menu</v-icon>
       </v-btn>
       <v-btn
+        aria-label="home-button"
         class="mr-2"
         icon
         x-large
@@ -18,7 +19,7 @@
         color="transparent"
       >
         <v-avatar size="45">
-          <img src="@/assets/logo.webp" width="100%;" alt="alt" />
+          <img src="@/assets/logo.webp" width="100%;" alt="avatar" />
         </v-avatar>
       </v-btn>
       <v-spacer />
@@ -54,6 +55,7 @@
       >
         <v-avatar>
           <img
+            alt="profile photo"
             style="object-fit: cover"
             src="https://i0.wp.com/www.indir.com/haber/wp-content/uploads/2021/11/anonimsinde-hesaba-profil-fotografi-nasil-eklenir-.jpg?resize=1440%2C720&ssl=1"
           />
