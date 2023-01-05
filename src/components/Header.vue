@@ -28,7 +28,12 @@
       clear-icon="close"
     >
       <template v-slot:append-outer>
-        <v-btn icon plain style="top: -12px">
+        <v-btn
+          icon
+          color="#004e4e"
+          style="top: -12px"
+          aria-label="search-button"
+        >
           <v-icon class="material-icons">search</v-icon>
         </v-btn>
       </template>
@@ -40,8 +45,8 @@
       class="mr-2"
       icon
       dark
-      plain
-      color="primary"
+      color="#004e4e"
+      aria-label="account-button"
     >
       <transition name="fade" mode="out-in">
         <v-icon :key="new Date().getTime()">{{ accountButtonIcon }}</v-icon>

@@ -1,7 +1,12 @@
 <template>
   <v-footer padless fixed :color="$vuetify.theme.dark ? '#1E1E1E' : '#FFFFFF'">
     <div class="footer">
-      <v-switch v-model="$vuetify.theme.dark" inset append-icon="nights_stay" />
+      <v-switch
+        aria-label="dark-mode-switch"
+        v-model="$vuetify.theme.dark"
+        inset
+        prepend-icon="nights_stay"
+      />
     </div>
   </v-footer>
 </template>
