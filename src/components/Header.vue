@@ -11,7 +11,6 @@
         <v-icon>menu</v-icon>
       </v-btn>
       <v-btn
-        class="ml-2"
         icon
         x-large
         @click="$router.push({ name: $routeNames.HOME })"
@@ -46,7 +45,6 @@
 
       <v-btn
         :to="{ name: $routeNames.ACCOUNT }"
-        class="mr-2"
         icon
         dark
         :color="buttonColors"
