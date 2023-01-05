@@ -32,22 +32,15 @@
         placeholder="Not ya da kişi ara"
         clear-icon="close"
       >
-        <template v-slot:append-outer>
-          <v-btn
-            icon
-            :color="buttonColors"
-            style="top: -12px"
-            aria-label="search-button"
-          >
-            <v-icon class="material-icons">search</v-icon>
-          </v-btn>
+        <template v-slot:append>
+          <v-icon @click="() => {}" class="material-icons">search</v-icon>
         </template>
       </v-text-field>
       <v-spacer />
 
       <v-btn
         :to="{ name: $routeNames.ACCOUNT }"
-        class="mr-2"
+        class="ml-5 mr-2"
         icon
         dark
         :color="buttonColors"
