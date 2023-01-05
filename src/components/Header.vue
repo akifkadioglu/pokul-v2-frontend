@@ -29,22 +29,35 @@
     >
       <template v-slot:append-outer>
         <v-btn icon plain style="top: -12px">
-          <v-icon>search</v-icon>
+          <v-icon class="material-icons">search</v-icon>
         </v-btn>
       </template>
     </v-text-field>
     <v-spacer />
-    <AccountButton />
+
+    <v-btn
+      :to="{ name: $routeNames.ACCOUNT }"
+      class="mr-2"
+      icon
+      dark
+      plain
+      color="primary"
+    >
+      <transition name="fade" mode="out-in">
+        <v-icon :key="new Date().getTime()">{{ accountButtonIcon }}</v-icon>
+      </transition>
+    </v-btn>
   </v-app-bar>
 </template>
 
 <script>
-import AccountButton from "./header_addition/AccountButton.vue";
 export default {
-  components: {
-    AccountButton,
+  computed: {
+    accountButtonIcon() {
+      return this.$route.name == this.$routeNames.ACCOUNT
+        ? "person"
+        : "person_outline";
+    },
   },
 };
 </script>
-
-<style></style>
