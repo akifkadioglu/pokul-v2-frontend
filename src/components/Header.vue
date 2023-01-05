@@ -30,7 +30,7 @@
       <template v-slot:append-outer>
         <v-btn
           icon
-          color="#004e4e"
+          :color="buttonColors"
           style="top: -12px"
           aria-label="search-button"
         >
@@ -45,7 +45,7 @@
       class="mr-2"
       icon
       dark
-      color="#004e4e"
+      :color="buttonColors"
       aria-label="account-button"
     >
       <transition name="fade" mode="out-in">
@@ -62,6 +62,9 @@ export default {
       return this.$route.name == this.$routeNames.ACCOUNT
         ? "person"
         : "person_outline";
+    },
+    buttonColors() {
+      return this.$vuetify.theme.dark ? "#2bd8d3" : "#004e4e";
     },
   },
 };
