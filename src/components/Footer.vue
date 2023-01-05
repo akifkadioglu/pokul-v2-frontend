@@ -1,12 +1,7 @@
 <template>
-  <v-footer padless fixed :color="$vuetify.theme.dark ? '#1E1E1E' : '#FFFFFF'">
+  <v-footer padless :color="$vuetify.theme.dark ? '#1E1E1E' : '#FFFFFF'">
     <div class="footer">
-      <v-switch
-        aria-label="dark-mode-switch"
-        v-model="$vuetify.theme.dark"
-        inset
-        prepend-icon="nights_stay"
-      />
+      {{ new Date().getFullYear() }} · {{ this.$variables.APP_NAME }}
     </div>
   </v-footer>
 </template>

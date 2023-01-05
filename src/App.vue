@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <Header />
-    <v-card height="1000vh" elevation="0">
+    <v-card height="100vh" elevation="0">
       <v-main>
         <transition name="fade" mode="out-in">
           <router-view />
@@ -9,22 +9,30 @@
       </v-main>
     </v-card>
     <Footer />
+    <Snackbar />
   </v-app>
 </template>
 
 <script>
+import Snackbar from "./components/Snackbar.vue";
 import Header from "./components/Header.vue";
 import Footer from "./components/Footer.vue";
 export default {
   components: {
     Header,
     Footer,
+    Snackbar,
   },
-  name: "App",
-
-  data: () => ({
-    //
-  }),
+  mounted() {
+    this.checkDarkMode();
+  },
+  methods: {
+    checkDarkMode() {
+      if (localStorage.getItem(this.$variables.IS_DARK_MODE) === "true") {
+        this.$vuetify.theme.dark = true;
+      }
+    },
+  },
 };
 </script>
 <style>
