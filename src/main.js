@@ -3,6 +3,9 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify'
+import 'material-icons/iconfont/material-icons.css';
+import { routeNames } from './routes'
+Vue.prototype.$routeNames = routeNames
 
 Vue.config.productionTip = false
 

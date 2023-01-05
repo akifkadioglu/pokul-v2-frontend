@@ -1,22 +1,25 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark elevation="0">
-      <v-spacer />
-      <span class="header">P-Okul</span>
-      <v-spacer />
-    </v-app-bar>
-    <v-card height="100vh" elevation="0">
+    <Header />
+    <v-card height="1000vh" elevation="0">
       <v-main>
         <transition name="fade" mode="out-in">
           <router-view />
         </transition>
       </v-main>
     </v-card>
+    <Footer />
   </v-app>
 </template>
 
 <script>
+import Header from "./components/Header.vue";
+import Footer from "./components/Footer.vue";
 export default {
+  components: {
+    Header,
+    Footer,
+  },
   name: "App",
 
   data: () => ({
@@ -24,7 +27,7 @@ export default {
   }),
 };
 </script>
-<style scoped>
+<style>
 .fade-enter-active,
 .fade-leave-active {
   transition-duration: 0.3s;
@@ -54,8 +57,5 @@ export default {
 }
 .scroll {
   overflow-y: scroll;
-}
-.header {
-  font-size: 25px;
 }
 </style>
