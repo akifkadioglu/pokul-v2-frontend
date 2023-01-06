@@ -7,7 +7,8 @@ router.prototype.push = function push(location) {
 export const routeNames = {
     HOME: 'Home',
     ACCOUNT: 'Account',
-    INTRODUCTION: 'Introduction'
+    INTRODUCTION: 'Introduction',
+    LOGIN: 'Login'
 }
 
 

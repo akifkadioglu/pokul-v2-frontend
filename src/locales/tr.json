@@ -1,0 +1,14 @@
+{
+  "languages": "Diller",
+  "dark_mode": "Karanlık mod",
+  "my_account": "Hesabım",
+  "home_page": "Ana sayfa",
+  "turkish": "Türkçe",
+  "english": "İngilizce",
+  "search_p_okul": "P-Okul'da Ara",
+  "dark_mode_activated": "Karanlık mod etkinleştirildi",
+  "light_mode_activated": "Aydınlık mod etkinleştirildi",
+
+  "what_is_p_okul": "P-Okul Nedir?",
+  "what_is_p_okul_answer": "P-Okul, Pamukkale Üniversitesi için yazılmış bir not paylaşım uygulamasıdır."
+}

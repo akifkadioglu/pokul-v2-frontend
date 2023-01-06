@@ -13,7 +13,7 @@
         filled
         rounded
         clearable
-        placeholder="Not ya da kişi ara"
+        :placeholder="$t($keys.SEARCH_P_OKUL)"
         clear-icon="close"
         v-model="search"
         @keydown.enter="addStoredSearches"

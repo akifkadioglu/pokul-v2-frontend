@@ -3,30 +3,39 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Account from '../views/Account.vue'
 import Introduction from '../views/Introduction.vue'
-export const eventBus = new Vue();
+import Login from '../views/Login.vue'
+
 Vue.use(VueRouter)
+import { middlewares } from './middlewares'
 
 const routes = [
   {
     path: '/tanitim',
     name: 'Introduction',
     component: Introduction,
-
-
+  },
+  {
+    path: '/giris-yap',
+    name: 'Login',
+    component: Login,
+    beforeEnter: middlewares.login,
   },
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    beforeEnter: middlewares.auth,
   },
   {
     path: '/hesabim',
     name: 'Account',
-    component: Account
+    component: Account,
+    beforeEnter: middlewares.auth,
   },
   {
     path: '*',
-    redirect: '/'
+    redirect: '/',
+    beforeEnter: middlewares.auth,
   },
 ]
 

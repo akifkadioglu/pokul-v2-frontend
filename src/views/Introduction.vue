@@ -2,10 +2,9 @@
   <div>
     <Header />
     <div class="container">
-      <h2>P-Okul Nedir?</h2>
+      <h2>{{ $t($keys.WHAT_IS_P_OKUL) }}</h2>
       <div>
-        P-Okul Pamukkale Üniversitesi için yazılmış bir not paylaşma
-        uygulamasıdır.
+        {{ $t($keys.WHAT_IS_P_OKUL_ANSWER) }}
       </div>
     </div>
   </div>
