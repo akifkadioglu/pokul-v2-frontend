@@ -32,6 +32,8 @@
         dark
         :color="buttonColors"
         aria-label="account-button"
+        width="35"
+        height="35"
       >
         <v-avatar size="35">
           <img
