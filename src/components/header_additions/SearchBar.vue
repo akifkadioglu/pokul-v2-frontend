@@ -8,7 +8,7 @@
     <template v-slot:activator="{ on }">
       <v-text-field
         v-on="on"
-        class="mt-5"
+        hide-details
         dense
         filled
         rounded
@@ -29,18 +29,10 @@
     </template>
     <v-card>
       <transition name="fade" mode="out-in">
-        <v-list
-          v-show="
-            storedSearches.filter((x) => x.indexOf(search ?? '') != -1).length >
-            0
-          "
-          color="white"
-        >
+        <v-list v-show="storedSearchesCheck.length > 0" color="white">
           <v-list-item
             class="list-item"
-            v-for="(item, index) in storedSearches.filter(
-              (x) => x.indexOf(search ?? '') != -1
-            )"
+            v-for="(item, index) in storedSearchesCheck"
             :key="index"
             @click="search = item"
           >
@@ -65,17 +57,29 @@ export default {
         ? []
         : [...JSON.parse(localStorage.storedSearches)];
     },
+    storedSearchesCheck: function () {
+      return localStorage.storedSearches === undefined
+        ? []
+        : [...JSON.parse(localStorage.storedSearches)]
+            .slice(0, 5)
+            .filter(
+              (x) =>
+                x
+                  .toLowerCase()
+                  .indexOf((this.search ?? "").toLowerCase() ?? "") != -1
+            );
+    },
   },
   methods: {
     addStoredSearches: function () {
-      let storedSearches = this.storedSearches;
       if ((this.search == "") | (this.search == null)) {
         return;
       }
+      let storedSearches = this.storedSearches;
+
       if (!storedSearches.includes(this.search)) {
         storedSearches.unshift(this.search);
         localStorage.storedSearches = JSON.stringify(storedSearches);
-        this.storedSearches();
       }
     },
   },

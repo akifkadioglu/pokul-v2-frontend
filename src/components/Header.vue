@@ -4,7 +4,6 @@
       app
       elevation="0"
       :color="$vuetify.theme.dark ? '#1E1E1E' : '#FFFFFF'"
-      class="app-bar"
       height="75px"
     >
       <v-btn aria-label="drawer-button" @click="drawer = !drawer" icon>
@@ -15,7 +14,7 @@
         class="mr-2"
         icon
         x-large
-        @click="$router.push({ name: $routeNames.HOME })"
+        @click="$router.push({ name: $routeNames.INTRODUCTION })"
         color="transparent"
       >
         <v-avatar size="45">

@@ -7,7 +7,7 @@
     v-click-outside="onClickOutside"
   >
     <v-list dense flat>
-      <v-list-item two-line>
+      <v-list-item two-line @click="$router.push({ name: $routeNames.HOME })">
         <v-list-item-avatar>
           <img src="@/assets/logo.webp" width="100%;" alt="avatar" />
         </v-list-item-avatar>

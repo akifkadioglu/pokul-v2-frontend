@@ -1,10 +1,12 @@
 <template>
   <v-app>
-    <Header />
+    <transition name="fade" mode="out-in">
+      <Header v-if="isHeaderOpen" />
+    </transition>
     <v-card height="100vh" elevation="0">
       <v-main>
         <transition name="fade" mode="out-in">
-          <router-view />
+          <router-view @headerOf="headerOf" />
         </transition>
       </v-main>
     </v-card>
@@ -26,11 +28,24 @@ export default {
   mounted() {
     this.checkDarkMode();
   },
+  computed: {
+    isHeaderOpen() {
+      return this.header;
+    },
+  },
+  data() {
+    return {
+      header: true,
+    };
+  },
   methods: {
     checkDarkMode() {
       if (localStorage.getItem(this.$variables.IS_DARK_MODE) === "true") {
         this.$vuetify.theme.dark = true;
       }
+    },
+    headerOf(value) {
+      this.header = value;
     },
   },
 };
