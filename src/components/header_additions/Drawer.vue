@@ -24,7 +24,7 @@
         :to="{ name: item.page }"
         dense
         exact
-        active-class="teal--text "
+        active-class="teal--text"
       >
         <v-list-item-avatar>
           <v-icon>{{ item.icon }}</v-icon>
@@ -83,10 +83,12 @@ export default {
     },
     switchDarkMode() {
       this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
-      this.$store.state.isSnackbarOpen = true;
-      this.$store.state.snackbarText = this.$vuetify.theme.dark
-        ? "Karanlık mod Aktif edildi"
-        : "Aydınlık mod Aktif edildi";
+      this.$functions.callSnackBar(
+        this.$vuetify.theme.dark
+          ? "Karanlık mod Aktif edildi"
+          : "Aydınlık mod Aktif edildi"
+      );
+
       localStorage.setItem(
         this.$variables.IS_DARK_MODE,
         this.$vuetify.theme.dark.toString()

@@ -23,19 +23,7 @@
         </v-avatar>
       </v-btn>
       <v-spacer />
-      <v-text-field
-        class="mt-5"
-        dense
-        filled
-        rounded
-        clearable
-        placeholder="Not ya da kişi ara"
-        clear-icon="close"
-      >
-        <template v-slot:append>
-          <v-icon @click="() => {}" class="material-icons">search</v-icon>
-        </template>
-      </v-text-field>
+      <SearchBar />
       <v-spacer />
 
       <v-btn
@@ -61,9 +49,11 @@
 
 <script>
 import Drawer from "./header_additions/Drawer.vue";
+import SearchBar from "./header_additions/SearchBar.vue";
 export default {
   components: {
     Drawer,
+    SearchBar,
   },
   computed: {
     accountButtonIcon() {

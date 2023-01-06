@@ -6,10 +6,10 @@ import vuetify from './plugins/vuetify'
 import 'material-icons/iconfont/material-icons.css';
 import { variables } from './variables'
 import { routeNames } from './routes'
-import { settings } from './setting_functions'
+import { functions } from './functions'
 Vue.prototype.$variables = variables
 Vue.prototype.$routeNames = routeNames
-Vue.prototype.$settings = settings
+Vue.prototype.$functions = functions
 
 Vue.config.productionTip = false
 
