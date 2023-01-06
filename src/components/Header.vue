@@ -33,7 +33,7 @@
         :color="buttonColors"
         aria-label="account-button"
       >
-        <v-avatar>
+        <v-avatar size="35">
           <img
             alt="profile photo"
             style="object-fit: cover"
