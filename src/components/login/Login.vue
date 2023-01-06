@@ -8,7 +8,6 @@
           placeholder="E-posta"
           suffix="@posta.pau.edu.tr"
           filled
-          @input="checkEmail"
           rounded
           dense
           :rules="[rules.required, rules.email]"
@@ -29,7 +28,6 @@
           <v-btn
             v-else
             color="primary"
-            @click="login"
             class="login-page-buttons"
             elevation="0"
           >
@@ -60,41 +58,7 @@ export default {
       isLoading: false,
     };
   },
-  methods: {
-    checkEmail() {},
-    async login() {
-      this.isLoading = true;
-      await this.axios
-        .post("login", this.loginForm)
-        .then((result) => {
-          this.axios.defaults.headers.common["Authorization"] =
-            `Bearer ` + result.data.token;
-
-          var token = this.CryptoJS.AES.encrypt(
-            result.data.token,
-            process.env.VUE_APP_APP_KEY
-          );
-          var decode = this.$helpers.parseJwt(result.data.token);
-          console.log(this.$helpers.returnEncryptItem(decode.Name.toString()));
-          var name = this.$helpers.returnEncryptItem(decode.Name.toString());
-          var role = this.$helpers.returnEncryptItem(decode.Role.toString());
-          var user_id = this.$helpers.returnEncryptItem(
-            decode.UserId.toString()
-          );
-          localStorage.setItem("token", token);
-          localStorage.setItem("name", name);
-          localStorage.setItem("role", role);
-          localStorage.setItem("user_id", user_id);
-          this.$router.go(0);
-          this.$router.push({ name: "Home" });
-        })
-        .catch((err) => {
-          console.log(err);
-          alert(err.response.data.message);
-        });
-      this.isLoading = false;
-    },
-  },
+  methods: {},
 };
 </script>
 
