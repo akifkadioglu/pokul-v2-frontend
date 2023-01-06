@@ -4,7 +4,7 @@
       class="ml-2 mr-5"
       icon
       aria-label="account-button"
-      @click="switchDarkMode"
+      @click="$functions.switchDarkMode($vuetify)"
     >
       <v-icon>nights_stay</v-icon>
     </v-btn>
@@ -30,20 +30,6 @@
 
 <script>
 export default {
-  methods: {
-    switchDarkMode() {
-      this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
-      this.$functions.callSnackBar(
-        this.$vuetify.theme.dark
-          ? "Karanlık mod Aktif edildi"
-          : "Aydınlık mod Aktif edildi"
-      );
-
-      localStorage.setItem(
-        this.$variables.IS_DARK_MODE,
-        this.$vuetify.theme.dark.toString()
-      );
-    },
-  },
+  methods: {},
 };
 </script>

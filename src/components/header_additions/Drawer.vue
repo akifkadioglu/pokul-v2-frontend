@@ -33,7 +33,7 @@
           <v-list-item-title>{{ $t(item.title) }}</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
-      <v-list-item @click="switchDarkMode">
+      <v-list-item @click="$functions.switchDarkMode($vuetify)">
         <v-list-item-avatar>
           <v-icon>nights_stay</v-icon>
         </v-list-item-avatar>
@@ -53,7 +53,7 @@
         <v-list-item
           v-for="(item, index) in languages"
           :key="index"
-          @click="switchLanguage(item.code)"
+          @click="$functions.switchLanguage(item.code)"
         >
           <v-list-item-title>{{ $t(item.lang) }}</v-list-item-title>
           <v-list-item-icon v-if="$i18n.locale == item.code">
@@ -105,29 +105,6 @@ export default {
       if (e.target.className === "v-overlay__scrim") {
         this.$emit("closeDrawer");
       }
-    },
-    switchDarkMode() {
-      this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
-      this.$functions.callSnackBar(
-        this.$vuetify.theme.dark
-          ? this.$t(this.$keys.DARK_MODE_ACTIVATED)
-          : this.$t(this.$keys.LIGHT_MODE_ACTIVATED)
-      );
-
-      localStorage.setItem(
-        this.$variables.IS_DARK_MODE,
-        this.$vuetify.theme.dark.toString()
-      );
-    },
-    switchLanguage(language) {
-      this.$i18n.locale =
-        language == this.$variables.TURKISH
-          ? this.$variables.TURKISH
-          : this.$variables.ENGLISH;
-      localStorage.setItem(
-        this.$variables.LANGUAGE,
-        this.$i18n.locale.toString()
-      );
     },
   },
 };
