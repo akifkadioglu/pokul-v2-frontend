@@ -1,6 +1,7 @@
 <template>
   <div class="settings">
     <v-btn
+      class="setting-item"
       depressed
       :color="$vuetify.theme.dark ? '#FFFFFF' : '#1E1E1E'"
       fab
@@ -14,6 +15,7 @@
     </v-btn>
 
     <v-menu
+      class="setting-item"
       top
       offset-y
       offset-x
@@ -51,9 +53,11 @@
   </div>
 </template>
 <style scoped>
+.setting-item {
+  z-index: 1;
+}
 .settings {
   position: fixed;
-  z-index: 1;
   bottom: 60px;
   width: 85%;
   display: flex;
