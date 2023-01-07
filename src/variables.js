@@ -6,9 +6,7 @@ export const variables = {
     IS_DARK_MODE: 'isDarkMode',
     TOKEN: 'token',
     LANGUAGE: 'language',
-    
-    //images
-    LOGO: 'logo',
+    STORED_SEARCHES: 'storedSearches',
 
     //languages
     TURKISH: 'tr',

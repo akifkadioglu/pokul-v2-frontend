@@ -2,9 +2,11 @@
   <div>
     <Header />
     <v-container>
-      <h2>{{ $t($keys.WHAT_IS_P_OKUL) }}</h2>
+      <h2>
+        {{ $t($keys.INFORMATION_WHAT_IS_P_OKUL) }}
+      </h2>
       <div>
-        {{ $t($keys.WHAT_IS_P_OKUL_ANSWER) }}
+        {{ $t($keys.INFORMATION_WHAT_IS_P_OKUL_ANSWER) }}
       </div>
     </v-container>
   </div>

@@ -16,15 +16,18 @@
           <div>{{ this.$variables.APP_NAME }}</div>
         </v-list-item-content>
       </v-list-item>
-      <v-divider></v-divider>
+
+      <v-divider />
+
       <v-list-item
         tile
         v-for="(item, index) in items"
         :key="index"
-        :to="{ name: item.page }"
         dense
         exact
+        :to="item.page != null ? { name: item.page } : ''"
         active-class="teal--text"
+        @click="item.func"
       >
         <v-list-item-avatar>
           <v-icon>{{ item.icon }}</v-icon>
@@ -33,40 +36,17 @@
           <v-list-item-title>{{ $t(item.title) }}</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
-      <v-list-item @click="$functions.switchDarkMode($vuetify)">
-        <v-list-item-avatar>
-          <v-icon>nights_stay</v-icon>
-        </v-list-item-avatar>
 
-        <v-list-item-content>
-          <v-list-item-title>{{ $t($keys.DARK_MODE) }}</v-list-item-title>
-        </v-list-item-content>
-      </v-list-item>
-      <v-list-group :value="false" no-action append-icon="expand_more">
-        <template v-slot:activator>
-          <v-list-item-avatar>
-            <v-icon> translate </v-icon>
-          </v-list-item-avatar>
-          <v-list-item-title>{{ $t($keys.LANGUAGES) }}</v-list-item-title>
-        </template>
-
-        <v-list-item
-          v-for="(item, index) in languages"
-          :key="index"
-          @click="$functions.switchLanguage(item.code)"
-        >
-          <v-list-item-title>{{ $t(item.lang) }}</v-list-item-title>
-          <v-list-item-icon v-if="$i18n.locale == item.code">
-            <v-icon>check</v-icon>
-          </v-list-item-icon>
-        </v-list-item>
-      </v-list-group>
+      <ChooseLanguages />
+      
     </v-list>
   </v-navigation-drawer>
 </template>
 
 <script>
+import ChooseLanguages from "./drawer_additions/ChooseLanguages.vue";
 export default {
+  components: { ChooseLanguages },
   props: {
     drawer: {
       type: Boolean,
@@ -76,26 +56,24 @@ export default {
   mounted() {},
   data() {
     return {
-      languages: [
-        {
-          lang: this.$keys.TURKISH,
-          code: this.$variables.TURKISH,
-        },
-        {
-          lang: this.$keys.ENGLISH,
-          code: this.$variables.ENGLISH,
-        },
-      ],
       items: [
         {
           title: this.$keys.HOME_PAGE,
-          icon: "home",
+          icon: this.$icons.HOME,
           page: this.$routeNames.HOME,
+          func: () => {},
         },
         {
           title: this.$keys.MY_ACCOUNT,
-          icon: "person",
+          icon: this.$icons.ACCOUNT,
           page: this.$routeNames.ACCOUNT,
+          func: () => {},
+        },
+        {
+          title: this.$keys.DARK_MODE,
+          icon: this.$icons.DARK_MODE,
+          page: null,
+          func: () => this.$functions.switchDarkMode(this.$vuetify),
         },
       ],
     };

@@ -1,6 +1,7 @@
 import { routeNames } from '../routes'
 import router from '../router'
 import { variables } from '../variables';
+import { storage } from '../storage';
 
 
 export const middlewares = {
@@ -17,7 +18,7 @@ export const middlewares = {
 
     login(to, from, next) {
         if (
-            localStorage.getItem(variables.TOKEN) != null
+            storage.pull(variables.TOKEN) != null
         ) {
             router.push({ name: routeNames.HOME });
         }

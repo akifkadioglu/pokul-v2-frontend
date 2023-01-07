@@ -6,9 +6,15 @@
   "turkish": "Türkçe",
   "english": "İngilizce",
   "search_p_okul": "P-Okul'da Ara",
+
   "dark_mode_activated": "Karanlık mod etkinleştirildi",
   "light_mode_activated": "Aydınlık mod etkinleştirildi",
+  "app_language_changed": "Uygulama dili değiştirildi",
 
-  "what_is_p_okul": "P-Okul Nedir?",
-  "what_is_p_okul_answer": "P-Okul, Pamukkale Üniversitesi için yazılmış bir not paylaşım uygulamasıdır."
+  "information_what_is_p_okul": "P-Okul Nedir?",
+  "information_what_is_p_okul_answer": "P-Okul, Pamukkale Üniversitesi için yazılmış bir not paylaşım uygulamasıdır.",
+
+  "login_username_check": "Kullanıcı adınızı doğru yazdığınızdan emin olun.",
+  "login_required_check": "Zorunlu alan.",
+  "login_login": "Giriş yap"
 }

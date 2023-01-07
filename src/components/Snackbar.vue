@@ -10,7 +10,7 @@
           v-bind="attrs"
           @click="$store.state.isSnackbarOpen = false"
         >
-          <v-icon>close</v-icon>
+          <v-icon>{{ $icons.CLOSE }}</v-icon>
         </v-btn>
       </template>
     </v-snackbar>

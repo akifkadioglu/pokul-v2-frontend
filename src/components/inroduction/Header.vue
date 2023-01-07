@@ -6,7 +6,7 @@
       aria-label="account-button"
       @click="$functions.switchDarkMode($vuetify)"
     >
-      <v-icon>nights_stay</v-icon>
+      <v-icon>{{ $icons.DARK_MODE }}</v-icon>
     </v-btn>
     <v-spacer />
 
@@ -23,13 +23,7 @@
       icon
       aria-label="account-button"
     >
-      <v-icon>login</v-icon>
+      <v-icon>{{ $icons.LOGIN }}</v-icon>
     </v-btn>
   </v-app-bar>
 </template>
-
-<script>
-export default {
-  methods: {},
-};
-</script>

@@ -40,7 +40,7 @@ export default {
   },
   methods: {
     checkDarkMode() {
-      if (localStorage.getItem(this.$variables.IS_DARK_MODE) === "true") {
+      if (this.$storage.pull(this.$variables.IS_DARK_MODE) === "true") {
         this.$vuetify.theme.dark = true;
       }
     },

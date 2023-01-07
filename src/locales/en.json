@@ -6,9 +6,15 @@
   "turkish": "Turkish",
   "english": "English",
   "search_p_okul": "Search P-Okul",
+
   "dark_mode_activated": "Dark mode activated",
   "light_mode_activated": "Light mode activated",
+  "app_language_changed": "Application language changed",
 
-  "what_is_p_okul": "What is P-Okul?",
-  "what_is_p_okul_answer": "P-School is a note sharing application written for Pamukkale University."
+  "information_what_is_p_okul": "What is P-Okul?",
+  "information_what_is_p_okul_answer": "P-School is a note sharing application written for Pamukkale University.",
+
+  "login_username_check": "Make sure you spelled your username correctly.",
+  "login_required_check": "Required field.",
+  "login_login": "Login"
 }

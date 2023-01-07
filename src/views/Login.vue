@@ -13,22 +13,26 @@
         </transition>
       </div>
     </div>
+
+    <Settings />
   </div>
 </template>
 
 <script>
 import LoginC from "../components/login/Login.vue";
 import RegisterC from "../components/login/Register.vue";
+import Settings from "../components/login/Settings.vue";
 export default {
   beforeCreate() {
     this.$emit("headerOf", false);
   },
   beforeDestroy() {
-    this.$emit("headerOf", false);
+    this.$emit("headerOf", true);
   },
   components: {
     LoginC,
     RegisterC,
+    Settings,
   },
   data() {
     return {
@@ -50,5 +54,17 @@ export default {
   height: 100vh;
   display: grid;
   place-items: center;
+}
+.settings {
+  position: fixed;
+  bottom: 15px;
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.list-item:hover {
+  background-color: rgba(0, 0, 0, 0.15);
+  transition: 0.5s;
 }
 </style>

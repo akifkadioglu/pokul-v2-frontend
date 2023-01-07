@@ -22,7 +22,7 @@
       >
         <template v-slot:append>
           <v-icon @click="addStoredSearches" class="material-icons">
-            search
+            {{ $icons.SEARCH }}
           </v-icon>
         </template>
       </v-text-field>
@@ -53,21 +53,17 @@ export default {
   },
   computed: {
     storedSearches: function () {
-      return localStorage.storedSearches === undefined
+      return this.$storage.pull(this.$variables.STORED_SEARCHES) === null
         ? []
-        : [...JSON.parse(localStorage.storedSearches)];
+        : [
+            ...JSON.parse(this.$storage.pull(this.$variables.STORED_SEARCHES)),
+          ].slice(0, 5);
     },
     storedSearchesCheck: function () {
-      return localStorage.storedSearches === undefined
-        ? []
-        : [...JSON.parse(localStorage.storedSearches)]
-            .slice(0, 5)
-            .filter(
-              (x) =>
-                x
-                  .toLowerCase()
-                  .indexOf((this.search ?? "").toLowerCase() ?? "") != -1
-            );
+      return this.storedSearches.filter(
+        (x) =>
+          x.toLowerCase().indexOf((this.search ?? "").toLowerCase() ?? "") != -1
+      );
     },
   },
   methods: {
@@ -79,7 +75,10 @@ export default {
 
       if (!storedSearches.includes(this.search)) {
         storedSearches.unshift(this.search);
-        localStorage.storedSearches = JSON.stringify(storedSearches);
+        this.$storage.push(
+          this.$variables.STORED_SEARCHES,
+          JSON.stringify(storedSearches)
+        );
       }
     },
   },

@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueI18n from 'vue-i18n'
 import store from '@/store/index.js';
 import { variables } from './variables';
-
+import { storage } from './storage';
 Vue.use(VueI18n)
 
 function loadLocaleMessages() {
@@ -17,15 +17,32 @@ function loadLocaleMessages() {
     })
     return messages
 }
-var locale = 'tr'
-if (localStorage.getItem(variables.LANGUAGE) == '' | localStorage.getItem(variables.LANGUAGE) == null) {
-    locale = navigator.language.split('-')[0] == 'tr' ? 'tr' : 'en';
-} else {
-    locale = localStorage.getItem(variables.LANGUAGE);
+var locale
 
+var localStorageLang = storage.pull(variables.LANGUAGE)
+var browserLang = navigator.language.split('-')[0]
+
+
+if (localStorageLang == '' | localStorageLang == null) {
+    switch (browserLang) {
+        case variables.TURKISH:
+            locale = variables.TURKISH;
+            break;
+
+        case variables.ENGLISH:
+            locale = variables.ENGLISH;
+            break;
+
+        default:
+            locale = variables.TURKISH;
+            break;
+    }
+} else {
+    locale = localStorageLang;
 }
+
 export default new VueI18n({
     locale: locale,
-    fallbackLocale: localStorage.getItem(store.state.lang) ?? 'tr',
+    fallbackLocale: storage.pull(store.state.lang) ?? variables.TURKISH,
     messages: loadLocaleMessages()
 })
