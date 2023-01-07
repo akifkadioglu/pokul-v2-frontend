@@ -55,14 +55,6 @@ export default {
   display: grid;
   place-items: center;
 }
-.settings {
-  position: fixed;
-  bottom: 15px;
-  width: 85%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 .list-item:hover {
   background-color: rgba(0, 0, 0, 0.15);
   transition: 0.5s;

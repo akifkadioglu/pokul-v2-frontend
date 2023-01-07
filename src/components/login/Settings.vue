@@ -50,3 +50,14 @@
     </v-menu>
   </div>
 </template>
+<style scoped>
+.settings {
+  position: fixed;
+  z-index: 1;
+  bottom: 60px;
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+</style>

@@ -1,6 +1,6 @@
 <template>
   <div class="loginPage">
-    <v-card width="400px">
+    <v-card max-width="400px">
       <v-card-title primary-title> Giriş yap </v-card-title>
       <v-card-text>
         <v-form ref="form" v-model="valid" lazy-validation>
