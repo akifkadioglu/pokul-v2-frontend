@@ -4,7 +4,7 @@
     :prev-icon="$icons.BACK"
     :next-icon="$icons.NEXT"
     :delimiter-icon="$icons.LINE"
-    height="500"
+    :height="$functions.isMobile() ? 300 : 500"
     hide-delimiter-background
   >
     <v-carousel-item eager v-for="(item, i) in items" :key="i">
@@ -13,7 +13,7 @@
           <ambient-image
             :elevation="18"
             :blur="20"
-            :height="350"
+            :height="$functions.isMobile() ? 200 : 350"
             :src="item.src"
           />
         </div>
@@ -32,6 +32,7 @@ export default {
   },
   data() {
     return {
+      windowHeight: window.innerHeight,
       items: [
         {
           src: "https://www.p-okul.net/socialmedia.png",

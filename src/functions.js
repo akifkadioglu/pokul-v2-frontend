@@ -12,7 +12,14 @@ import { variables } from "./variables";
 Vue.use(Vuetify);
 
 export const functions = {
-
+    isMobile() {
+        if (screen.width <= 760) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    },
     callSnackBar(text) {
         store.state.snackbarText = text;
         store.state.isSnackbarOpen = true;
