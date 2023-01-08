@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Announcement from "../components/Home/Announcement.vue";
+import Announcement from "../components/home/Announcement.vue";
 export default {
   components: { Announcement },
   name: "Home",

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header />
+    <header />
     <v-container>
       <h2>
         {{ $t($keys.INFORMATION_WHAT_IS_P_OKUL) }}
@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import Header from "../components/Inroduction/Header.vue";
+import Header from '../components/inroduction/Header.vue';
 export default {
   beforeCreate() {
     this.$emit("headerOf", false);
@@ -22,7 +22,8 @@ export default {
     this.$emit("headerOf", true);
   },
   components: {
-    Header,
+    Header
+    
   },
   data() {
     return {};

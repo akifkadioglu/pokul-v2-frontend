@@ -19,9 +19,9 @@
 </template>
 
 <script>
-import LoginC from "../components/Login/LoginC.vue";
-import RegisterC from "../components/Login/RegisterC.vue";
-import Settings from "../components/Login/Settings.vue";
+import LoginC from '../components/login/LoginC.vue';
+import RegisterC from '../components/login/RegisterC.vue';
+import Settings from '../components/login/Settings.vue';
 
 export default {
   beforeCreate() {
@@ -33,7 +33,8 @@ export default {
   components: {
     LoginC,
     RegisterC,
-    Settings,
+    Settings
+    
   },
   data() {
     return {
