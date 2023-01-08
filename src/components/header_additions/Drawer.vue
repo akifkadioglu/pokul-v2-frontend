@@ -9,7 +9,12 @@
     <v-list dense flat>
       <v-list-item two-line @click="$router.push({ name: $routeNames.HOME })">
         <v-list-item-avatar>
-          <img src="@/assets/logo.webp" width="100%" alt="avatar" />
+          <img
+            src="@/assets/logo.webp"
+            width="45px"
+            height="45px"
+            alt="avatar"
+          />
         </v-list-item-avatar>
 
         <v-list-item-content>
@@ -38,7 +43,6 @@
       </v-list-item>
 
       <ChooseLanguages />
-      
     </v-list>
   </v-navigation-drawer>
 </template>
