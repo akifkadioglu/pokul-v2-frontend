@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header />
+    <Header />
     <v-container>
       <h2>
         {{ $t($keys.INFORMATION_WHAT_IS_P_OKUL) }}
