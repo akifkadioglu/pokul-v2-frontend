@@ -11,8 +11,6 @@
       <v-row class="fill-height" align="center" justify="center">
         <div class="text-h2">
           <ambient-image
-            :elevation="18"
-            :blur="20"
             :height="$functions.isMobile() ? 200 : 350"
             :src="item.src"
           />
