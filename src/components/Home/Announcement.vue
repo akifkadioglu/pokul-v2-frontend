@@ -4,12 +4,12 @@
     :prev-icon="$icons.BACK"
     :next-icon="$icons.NEXT"
     :delimiter-icon="$icons.LINE"
-    height="300"
+    height="400"
     hide-delimiter-background
   >
     <v-carousel-item
       contain
-      max-height="300"
+      max-height="400"
       v-for="(item, i) in items"
       :key="i"
       :src="item.src"
@@ -26,7 +26,7 @@ export default {
           src: "https://www.p-okul.net/socialmedia.png",
         },
         {
-          src: "https://www.p-okul.net/socialmedia.png",
+          src: "https://cdn.vuetifyjs.com/images/carousel/bird.jpg",
         },
         {
           src: "https://www.p-okul.net/socialmedia.png",

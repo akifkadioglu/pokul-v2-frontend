@@ -78,11 +78,6 @@ export default {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
-.scroll {
-  overflow-y: auto;
-  overflow:initial;
-
-}
 .main {
   height: 100vh;
 }

@@ -16,5 +16,7 @@
 
   "login_username_check": "Make sure you spelled your username correctly.",
   "login_required_check": "Required field.",
-  "login_login": "Login"
+  "login_login": "Login",
+
+  "home_link":"link"
 }

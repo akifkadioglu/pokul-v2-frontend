@@ -10,6 +10,7 @@ export const keys = {
     MY_ACCOUNT: 'my_account',
     HOME_PAGE: 'home_page',
 
+
     //search bar
     SEARCH_P_OKUL: 'search_p_okul',
 
@@ -25,7 +26,10 @@ export const keys = {
     //login page
     LOGIN_USERNAME_CHECK: 'login_username_check',
     LOGIN_REQIRED_CHECK: 'login_required_check',
-    LOGIN_LOGIN: 'login_login'
+    LOGIN_LOGIN: 'login_login',
+
+    //home page 
+    HOME_LINK: 'home_link'
 
 }
 
