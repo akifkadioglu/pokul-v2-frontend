@@ -7,15 +7,16 @@
   <!--  Essential META Tags -->
   <meta property="og:title" content="P-Okul" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://www.p-okul.net/logo.png" />
+  <meta property="og:image" content="https://www.p-okul.net/socialmedia.png" />
   <meta property="og:url" content="https://www.p-okul.net/" />
   <meta name="twitter:card" content="summary_large_image">
 
   <!--  Non-Essential, But Recommended -->
-  <meta property="og:description" content="P-Okul, Pamukkale Üniversitesi için yazılmış bir not paylaşım uygulamasıdır." />
+  <meta property="og:description"
+    content="P-Okul, Pamukkale Üniversitesi için yazılmış bir not paylaşım uygulamasıdır." />
   <meta property="og:site_name" content="P-Okul" />
   <meta name="twitter:image:alt" content="P-Okul logo" />
-  <meta property="twitter:image" content="https://www.p-okul.net/logo.png"/>
+  <meta property="twitter:image" content="https://www.p-okul.net/socialmedia.png" />
 
   <meta name="viewport"
     content="width=device-width, initial-scale=0.8, user-scalable=no, minimum-scale=0.8, maximum-scale=0.8" />
@@ -26,7 +27,7 @@
   <title>P-Okul</title>
 </head>
 
-<body>
+<body class="overflow-hidden">
   <noscript>
     <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
         Please enable it to continue.</strong>
@@ -36,3 +37,8 @@
 </body>
 
 </html>
+<style>
+  body::-webkit-scrollbar {
+    display: none;
+  }
+</style>

@@ -19,9 +19,9 @@
 </template>
 
 <script>
-import LoginC from "../components/login/Login.vue";
-import RegisterC from "../components/login/Register.vue";
-import Settings from "../components/login/Settings.vue";
+import LoginC from "../components/Login/Login.vue";
+import RegisterC from "../components/Login/Register.vue";
+import Settings from "../components/Login/Settings.vue";
 export default {
   beforeCreate() {
     this.$emit("headerOf", false);

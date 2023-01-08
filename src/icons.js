@@ -9,4 +9,7 @@ export const icons = {
     LOGIN: 'login',
     CHECK: 'check',
     SEARCH: 'search',
+    BACK: 'chevron_left',
+    NEXT: 'navigate_next',
+    LINE: 'horizontal_rule',
 }

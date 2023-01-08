@@ -4,7 +4,7 @@
       <Header v-if="isHeaderOpen" />
     </transition>
     <v-card height="100vh" elevation="0">
-      <v-main>
+      <v-main class="overflow-auto main">
         <transition name="fade" mode="out-in">
           <router-view @headerOf="headerOf" />
         </transition>
@@ -79,6 +79,11 @@ export default {
   background: #555;
 }
 .scroll {
-  overflow-y: scroll;
+  overflow-y: auto;
+  overflow:initial;
+
+}
+.main {
+  height: 100vh;
 }
 </style>

@@ -1,20 +1,13 @@
 <template>
-  <div class="text">
-    <div class="text-center">Şu anda geliştiriliyor..</div>
-  </div>
+  <v-container>
+    <Announcement/>
+  </v-container>
 </template>
 
 <script>
-// @ is an alias to /src
-
+import Announcement from "../components/Home/Announcement.vue";
 export default {
+  components: { Announcement },
   name: "Home",
 };
 </script>
-<style scoped>
-.text {
-  height: 90vh;
-  display: grid;
-  align-items: center;
-}
-</style>

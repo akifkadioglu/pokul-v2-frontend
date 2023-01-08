@@ -1,5 +1,5 @@
 <template>
-  <v-footer padless :color="$vuetify.theme.dark ? '#1E1E1E' : '#FFFFFF'">
+  <v-footer app padless :color="$vuetify.theme.dark ? '#1E1E1E' : '#FFFFFF'">
     <div class="footer">
       {{ new Date().getFullYear() }} · {{ this.$variables.APP_NAME }}
     </div>

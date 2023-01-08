@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import Header from "../components/inroduction/Header.vue";
+import Header from "../components/Inroduction/Header.vue";
 export default {
   beforeCreate() {
     this.$emit("headerOf", false);
