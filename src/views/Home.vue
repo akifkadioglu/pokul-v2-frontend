@@ -1,13 +1,15 @@
 <template>
   <v-container>
-    <Announcement/>
+    <Announcement />
   </v-container>
 </template>
 
 <script>
-import Announcement from "../components/home/Announcement.vue";
+import Announcement from "../components/Home/Announcement.vue";
 export default {
-  components: { Announcement },
   name: "Home",
+  components: {
+    Announcement,
+  },
 };
 </script>
