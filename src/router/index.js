@@ -4,8 +4,8 @@ import Home from '../views/Home.vue'
 import Account from '../views/Account.vue'
 import Introduction from '../views/Introduction.vue'
 import Login from '../views/Login.vue'
-import Conference from '../views/Conference.vue'
-
+/* import Conference from '../views/Conference.vue'
+ */
 Vue.use(VueRouter)
 import { middlewares } from './middlewares'
 
