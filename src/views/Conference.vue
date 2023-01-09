@@ -14,13 +14,13 @@ export default {
   mounted: async function () {
     const apiKey = process.env.VUE_APP_VIDEOSDK_API_KEY;
     const meetingId = "milkyway";
-    const name = "Akifkadioglu";
+    const name = "Akif Kadioglu";
     const config = {
       name: name,
       meetingId: meetingId,
       apiKey: apiKey,
       containerId: null,
-      redirectOnLeave: "www.p-okul.net/",
+      redirectOnLeave: "https://www.p-okul.net/",
       micEnabled: true,
       webcamEnabled: true,
       participantCanToggleSelfWebcam: true,
@@ -32,7 +32,7 @@ export default {
       raiseHandEnabled: true,
       recordingEnabled: true,
       recordingEnabledByDefault: false,
-      recordingWebhookUrl: "https://www.videosdk.live/callback",
+      recordingWebhookUrl: "https://www.p-okul.net/",
       recordingAWSDirPath: `/meeting-recordings/${meetingId}/`, // automatically save recording in this s3 path
       brandingEnabled: true,
       brandLogoURL: "https://picsum.photos/200",
@@ -67,7 +67,7 @@ export default {
         actionButton: {
           // optional action button
           label: "Video SDK Live", // action button label
-          href: "https://videosdk.live/", // action button href
+          href: "https://www.p-okul.net/", // action button href
         },
       },
     };
