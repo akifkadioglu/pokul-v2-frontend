@@ -35,7 +35,7 @@ export default {
       recordingWebhookUrl: "https://www.p-okul.net/",
       recordingAWSDirPath: `/meeting-recordings/${meetingId}/`, // automatically save recording in this s3 path
       brandingEnabled: true,
-      brandLogoURL: "https://picsum.photos/200",
+      brandLogoURL: "https://www.p-okul.net/logo.png",
       brandName: "P-Okul",
       participantCanLeave: true, // if false, leave button won't be visible
       // Live stream meeting to youtube

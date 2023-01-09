@@ -32,13 +32,13 @@ const routes = [
     name: 'Account',
     component: Account,
     beforeEnter: middlewares.auth,
-  },
+  },/* 
   {
     path: '/konferans',
     name: 'Conference',
     component: Conference,
     beforeEnter: middlewares.auth,
-  },
+  }, */
   {
     path: '*',
     redirect: '/',

@@ -72,13 +72,13 @@ export default {
           icon: this.$icons.ACCOUNT,
           page: this.$routeNames.ACCOUNT,
           func: () => {},
-        },
+        },/* 
         {
           title: this.$keys.CONFERENCE,
           icon: this.$icons.CONFERENCE,
           page: this.$routeNames.CONFERENCE,
           func: () => {},
-        },
+        }, */
         {
           title: this.$keys.DARK_MODE,
           icon: this.$icons.DARK_MODE,
