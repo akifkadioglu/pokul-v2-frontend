@@ -12,7 +12,6 @@ export default {
     };
   },
   mounted: async function () {
-    console.log(process.env.VUE_APP_VIDEOSDK_API_KEY)
     const apiKey = process.env.VUE_APP_VIDEOSDK_API_KEY;
     const meetingId = "milkyway";
     const name = "Akifkadioglu";
