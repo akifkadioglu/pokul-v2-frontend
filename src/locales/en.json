@@ -3,6 +3,7 @@
   "dark_mode": "Dark mode",
   "my_account": "My account",
   "home_page": "Home page",
+  "conference": "Conference",
   "turkish": "Turkish",
   "english": "English",
   "search_p_okul": "Search P-Okul",
@@ -18,5 +19,5 @@
   "login_required_check": "Required field.",
   "login_login": "Login",
 
-  "home_link":"link"
+  "home_link": "link"
 }

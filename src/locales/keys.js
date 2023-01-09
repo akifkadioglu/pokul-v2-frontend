@@ -9,7 +9,7 @@ export const keys = {
     //pages
     MY_ACCOUNT: 'my_account',
     HOME_PAGE: 'home_page',
-
+    CONFERENCE: 'conference',
 
     //search bar
     SEARCH_P_OKUL: 'search_p_okul',

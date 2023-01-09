@@ -8,6 +8,7 @@ export const routeNames = {
     HOME: 'Home',
     ACCOUNT: 'Account',
     INTRODUCTION: 'Introduction',
+    CONFERENCE: 'Conference',
     LOGIN: 'Login'
 }
 

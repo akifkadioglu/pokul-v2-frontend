@@ -12,4 +12,5 @@ export const icons = {
     BACK: 'chevron_left',
     NEXT: 'navigate_next',
     LINE: 'horizontal_rule',
+    CONFERENCE: 'videocam'
 }
