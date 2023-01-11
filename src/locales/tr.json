@@ -17,7 +17,14 @@
 
   "login_username_check": "Kullanıcı adınızı doğru yazdığınızdan emin olun.",
   "login_required_check": "Zorunlu alan.",
+  "login_name_check": "Adınızı doğru yazdığınızdan emin olun.",
   "login_login": "Giriş yap",
+  "login_register": "Kaydol",
+  "login_email": "E-Posta",
+  "login_name": "İsim",
+  "login_password": "Şifre",
+  "login_password_confirmation": "Şifreyi Onayla",
+  "login_welcome_message": "P-Okul'a Hoş geldin",
 
   "home_link": "Bağlantı"
 }

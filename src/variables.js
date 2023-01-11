@@ -1,7 +1,8 @@
 
 export const variables = {
     APP_NAME: 'P-OKUL',
-
+    MAIL_SUFFIX: '@posta.pau.edu.tr',
+    
     //localeStorage
     IS_DARK_MODE: 'isDarkMode',
     TOKEN: 'token',
@@ -10,7 +11,13 @@ export const variables = {
 
     //languages
     TURKISH: 'tr',
-    ENGLISH: 'en'
+    ENGLISH: 'en',
+
+    //axios
+    GET: 'get',
+    POST: 'post',
+    PUT: 'put',
+    DELETE: 'delete',
 }
 
 

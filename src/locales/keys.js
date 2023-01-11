@@ -26,7 +26,14 @@ export const keys = {
     //login page
     LOGIN_USERNAME_CHECK: 'login_username_check',
     LOGIN_REQIRED_CHECK: 'login_required_check',
+    LOGIN_NAME_CHECK: 'login_name_check',
     LOGIN_LOGIN: 'login_login',
+    LOGIN_REGISTER: 'login_register',
+    LOGIN_EMAIL: 'login_email',
+    LOGIN_NAME: 'login_name',
+    LOGIN_PASSWORD: 'login_password',
+    LOGIN_PASSWORD_CONFIRMATION: 'login_password_confirmation',
+    LOGIN_WELCOME_MESSAGE: 'login_welcome_message',
 
     //home page 
     HOME_LINK: 'home_link'

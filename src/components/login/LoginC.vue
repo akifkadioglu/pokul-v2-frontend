@@ -6,17 +6,17 @@
         <v-form ref="form" v-model="valid" lazy-validation>
           <v-text-field
             v-model="loginForm.email"
-            placeholder="E-posta"
-            suffix="@posta.pau.edu.tr"
+            :placeholder="$t($keys.LOGIN_EMAIL)"
+            :suffix="$variables.MAIL_SUFFIX"
             filled
             rounded
             dense
             :rules="[rules.required, rules.username]"
           />
           <v-text-field
-            placeholder="Şifre"
+            :placeholder="$t($keys.LOGIN_PASSWORD)"
             v-model="loginForm.password"
-            :append-icon="isPasswordDisplay ? 'mdi-eye' : 'mdi-eye-off'"
+            :append-icon="isPasswordDisplay ? $icons.EYE : $icons.EYE_OFF"
             @click:append="isPasswordDisplay = !isPasswordDisplay"
             :type="isPasswordDisplay ? 'text' : 'password'"
             filled
@@ -69,11 +69,25 @@ export default {
     };
   },
   methods: {
-    login() {
+    async login() {
       if (!this.$refs.form.validate()) {
         return;
       }
-      this.$router.push({name:this.$routeNames.HOME})
+      this.isLoading = true;
+      let response = await this.$http.network(
+        this.$variables.POST,
+        this.$http_requests.LOGIN,
+        this.loginForm,
+        null
+      );
+      if (response.error == undefined) {
+        alert(this.$t(this.$keys.LOGIN_WELCOME_MESSAGE));
+        this.$storage.push(this.$variables.TOKEN, response.result.data.token);
+        this.$router.push({ name: this.$routeNames.HOME });
+      } else {
+        alert(response.error.response.data.message);
+      }
+      this.isLoading = false;
     },
   },
 };

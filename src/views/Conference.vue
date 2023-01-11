@@ -5,7 +5,12 @@
 <script>
 import { VideoSDKMeeting } from "@videosdk.live/rtc-js-prebuilt";
 export default {
-  name: "App",
+  beforeCreate() {
+    this.$emit("headerOf", false);
+  },
+  beforeDestroy() {
+    this.$emit("headerOf", true);
+  },
   data() {
     return {
       name: "Flavio",

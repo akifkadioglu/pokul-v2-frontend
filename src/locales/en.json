@@ -17,7 +17,14 @@
 
   "login_username_check": "Make sure you spelled your username correctly.",
   "login_required_check": "Required field.",
+  "login_name_check": "Make sure you spelled your name correctly.",
   "login_login": "Login",
+  "login_register": "Register",
+  "login_email": "E-Mail",
+  "login_name": "Name",
+  "login_password": "Password",
+  "login_password_confirmation": "Confirm Password",
+  "login_welcome_message": "Welcome to P-Okul",
 
   "home_link": "link"
 }

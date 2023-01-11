@@ -10,9 +10,11 @@
   "dependencies": {
     "@videosdk.live/rtc-js-prebuilt": "^0.3.23",
     "ambient-image": "^1.0.0",
+    "axios": "^1.2.2",
     "core-js": "^3.6.5",
     "material-icons": "^1.13.1",
     "vue": "^2.6.11",
+    "vue-axios": "^3.5.2",
     "vue-cryptojs": "^2.3.1",
     "vue-i18n": "^8.28.2",
     "vue-router": "^3.2.0",
