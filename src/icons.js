@@ -15,4 +15,5 @@ export const icons = {
     CONFERENCE: 'videocam',
     EYE: 'visibility',
     EYE_OFF: 'visibility_off',
+    FILE: 'attach_file',
 }

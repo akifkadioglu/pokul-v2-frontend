@@ -18,7 +18,7 @@
 
       <v-spacer />
 
-      <ProfileButton />
+      <ProfileButton class="ml-5 mr-2" />
     </v-app-bar>
     <Drawer :drawer="drawer" @closeDrawer="drawer = false" />
   </div>

@@ -25,17 +25,12 @@
             :rules="[rules.required]"
           />
           <div class="text-center">
-            <v-progress-circular
-              v-if="isLoading"
-              indeterminate
-              color="primary"
-            />
             <v-btn
-              v-else
               color="primary"
               class="login-page-buttons"
               elevation="0"
               @click="login"
+              :loading="isLoading"
             >
               {{ $t($keys.LOGIN_LOGIN) }}
             </v-btn>

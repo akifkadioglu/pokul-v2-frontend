@@ -1,7 +1,6 @@
 <template>
   <v-btn
     :to="{ name: $routeNames.ACCOUNT }"
-    class="ml-5 mr-2"
     icon
     dark
     aria-label="account-button"

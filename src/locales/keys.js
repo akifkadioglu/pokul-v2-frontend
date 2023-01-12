@@ -36,7 +36,11 @@ export const keys = {
     LOGIN_WELCOME_MESSAGE: 'login_welcome_message',
 
     //home page 
-    HOME_LINK: 'home_link'
+    HOME_LINK: 'home_link',
+
+    //send note
+    SEND_NOTE_PLACEHOLDER: "send_note_placeholder",
+    SEND_NOTE_PUBLISH: 'send_note_publish'
 
 }
 

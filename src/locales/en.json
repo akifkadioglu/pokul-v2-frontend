@@ -26,5 +26,8 @@
   "login_password_confirmation": "Confirm Password",
   "login_welcome_message": "Welcome to P-Okul",
 
-  "home_link": "link"
+  "home_link": "link",
+
+  "send_note_placeholder": "You can add a description for the note or write what happened in life.",
+  "send_note_publish": "Publish"
 }

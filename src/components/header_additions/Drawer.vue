@@ -65,20 +65,24 @@ export default {
           title: this.$keys.HOME_PAGE,
           icon: this.$icons.HOME,
           page: this.$routeNames.HOME,
-          func: () => {},
+          func: () => {
+            this.$emit("closeDrawer");
+          },
         },
         {
           title: this.$keys.MY_ACCOUNT,
           icon: this.$icons.ACCOUNT,
           page: this.$routeNames.ACCOUNT,
-          func: () => {},
-        },/* 
+          func: () => {
+            this.$emit("closeDrawer");
+          },
+        } /* 
         {
           title: this.$keys.CONFERENCE,
           icon: this.$icons.CONFERENCE,
           page: this.$routeNames.CONFERENCE,
           func: () => {},
-        }, */
+        }, */,
         {
           title: this.$keys.DARK_MODE,
           icon: this.$icons.DARK_MODE,

@@ -1,5 +1,6 @@
 export const http_requests = {
     //login
     REGISTER: 'register',
-    LOGIN: 'login'
+    LOGIN: 'login',
+    SEND_NOTE: 'send-note'
 }
