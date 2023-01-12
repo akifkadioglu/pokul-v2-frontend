@@ -6,12 +6,12 @@ import { storage } from '../storage';
 
 export const middlewares = {
     auth(to, from, next) {
-        /* if (
-            localStorage.getItem(variables.TOKEN) == null ||
-            localStorage.getItem(variables.TOKEN) == ""
+        if (
+            storage.pull(variables.TOKEN) == null ||
+            storage.pull(variables.TOKEN) == ""
         ) {
             router.push({ name: routeNames.INTRODUCTION });
-        } */
+        }
 
         next()
     },
