@@ -5,12 +5,16 @@
       <RegisterC v-else @registered="isLoginning = true" />
     </transition>
     <v-divider />
-    <div class="text-center">
-      <div @click="changeMode" depressed small color="primary" class="point">
-        <transition name="fade" mode="out-in">
-          <div v-if="isLoginning">Hesabın yok mu? Kaydol!</div>
-          <div v-else>Hesabın varsa Giriş yap</div>
-        </transition>
+    <div class="text-center point">
+      <div @click="changeMode" depressed small color="primary">
+        <div v-if="isLoginning">
+          Hesabın yok mu?
+          <span class="green--text">{{ $t($keys.LOGIN_REGISTER) }}!</span>
+        </div>
+        <div v-else>
+          Hesabın varsa
+          <span class="green--text">{{ $t($keys.LOGIN_LOGIN) }}!</span>
+        </div>
       </div>
     </div>
 
@@ -19,9 +23,9 @@
 </template>
 
 <script>
-import LoginC from '../components/login/LoginC.vue';
-import RegisterC from '../components/login/RegisterC.vue';
-import Settings from '../components/login/Settings.vue';
+import LoginC from "../components/login/LoginC.vue";
+import RegisterC from "../components/login/RegisterC.vue";
+import Settings from "../components/login/Settings.vue";
 
 export default {
   beforeCreate() {
@@ -33,8 +37,7 @@ export default {
   components: {
     LoginC,
     RegisterC,
-    Settings
-    
+    Settings,
   },
   data() {
     return {
@@ -51,6 +54,9 @@ export default {
 <style scoped>
 .point {
   cursor: pointer;
+  position: fixed;
+  bottom: 72px;
+  z-index: 1;
 }
 .page-center {
   height: 100vh;
