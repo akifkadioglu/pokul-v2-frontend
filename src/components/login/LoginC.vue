@@ -77,7 +77,6 @@ export default {
       );
       if (response.error == undefined) {
         alert(this.$t(this.$keys.LOGIN_WELCOME_MESSAGE));
-        console.log(response.result.data.token)
         this.$storage.push(this.$variables.TOKEN, response.result.data.token);
         this.$router.push({ name: this.$routeNames.HOME });
       } else {
