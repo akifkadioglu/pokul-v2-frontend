@@ -11,9 +11,12 @@ export const storage = {
     },
 
     push(key, value) {
-
+        console.log(key)
+        console.log(value)
         var newKey = cryption.encrypt(key)
         var newValue = cryption.aesencrypt(value)
+        console.log(newKey)
+        console.log(newValue)
 
         localStorage.setItem(newKey, newValue)
     },
