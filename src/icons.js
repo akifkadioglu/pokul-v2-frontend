@@ -16,4 +16,6 @@ export const icons = {
     EYE: 'visibility',
     EYE_OFF: 'visibility_off',
     FILE: 'attach_file',
+    MORE: 'more_vert',
+    REPORT: 'outlined_flag',
 }

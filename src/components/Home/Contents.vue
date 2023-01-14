@@ -1,6 +1,6 @@
 <template>
   <div class="contents">
-    <v-card class="mt-5 mb-5" v-for="i in 5" :key="i">
+    <v-card class="mt-5 mb-5" v-for="index in 5" :key="index">
       <v-card-title primary-title>
         <v-avatar size="40" color="red">
           <div class="white--text">{{ "Akif".slice(0, 2).toUpperCase() }}</div>
@@ -9,6 +9,8 @@
           <span>Akif</span>
           <span class="ml-2 subtitle-2 text--secondary">@skadioglu20</span>
         </div>
+        <v-spacer />
+        <Options :id="index" />
       </v-card-title>
       <v-card-text>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quisquam
@@ -34,7 +36,12 @@
 </template>
 
 <script>
-export default {};
+import Options from "./content_additions/Options.vue";
+export default {
+  components: {
+    Options,
+  },
+};
 </script>
 <style scoped>
 .contents {

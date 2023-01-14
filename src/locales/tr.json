@@ -29,5 +29,7 @@
   "home_link": "Bağlantı",
 
   "send_note_placeholder": "Not için bir açıklama ekleyebilir veya hayatta neler olduğunu yazabilirsiniz.",
-  "send_note_publish": "Yayınla"
+  "send_note_publish": "Yayınla",
+
+  "report": "Şikayet et"
 }
