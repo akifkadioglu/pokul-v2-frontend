@@ -10,7 +10,6 @@ if (token != null) {
     try {
         axios.defaults.headers.common[http_variables.AUTHORIZATION] = http_variables.token(token);
     } catch (error) {
-        console.log(error)
         localStorage.clear()
     }
 }

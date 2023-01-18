@@ -106,8 +106,6 @@ export default {
         this.file = null;
       }
       this.isLoading = false;
-
-      console.log(result);
     },
   },
 };
