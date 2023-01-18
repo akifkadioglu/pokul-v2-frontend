@@ -29,6 +29,7 @@ Vue.prototype.$icons = icons
 Vue.prototype.$keys = keys
 Vue.prototype.$variables = variables
 Vue.prototype.$routeNames = routeNames
+
 Vue.config.productionTip = false
 
 new Vue({

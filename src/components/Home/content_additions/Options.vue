@@ -32,8 +32,7 @@
 export default {
   props: {
     id: {
-      type: Number,
-      default: 0,
+      default: "",
     },
   },
   data() {
@@ -47,8 +46,17 @@ export default {
     };
   },
   methods: {
-    reportContent() {
-      console.log(this.id);
+    async reportContent() {
+      var result = await this.$http.network(
+        this.$variables.POST,
+        this.$http_requests.REPORT_NOTE,
+        {
+          note_id: this.id,
+        }
+      );
+      if (result.result != undefined) {
+        this.$functions.callSnackBar(result.result.data.message);
+      }
     },
   },
 };

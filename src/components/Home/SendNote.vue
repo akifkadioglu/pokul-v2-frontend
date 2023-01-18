@@ -1,7 +1,12 @@
 <template>
   <div class="post">
     <v-divider />
-    <v-form ref="form" v-model="valid" lazy-validation>
+    <v-form
+      ref="form"
+      enctype="multipart/form-data"
+      v-model="valid"
+      lazy-validation
+    >
       <v-textarea
         :placeholder="$t($keys.SEND_NOTE_PLACEHOLDER)"
         rows="6"
@@ -44,7 +49,7 @@
           @click="sendNote"
           color="primary"
           depressed
-          :loading="false"
+          :loading="isLoading"
           rounded
           :disabled="text.length == 0"
         >
@@ -70,6 +75,7 @@ export default {
       file: null,
       valid: true,
       maxlength: 500,
+      isLoading: false,
     };
   },
   methods: {
@@ -77,10 +83,31 @@ export default {
       this.fileName = e.name;
       this.file = e;
     },
-    sendNote() {
+    async sendNote() {
       if (!this.$refs.form.validate()) {
         return;
       }
+      this.isLoading = true;
+      var result = await this.$http.network(
+        this.$variables.POST,
+        this.$http_requests.SEND_NOTE,
+        {
+          content: this.text,
+          file: this.file,
+        },
+        {},
+        {
+          "Content-Type": "multipart/form-data",
+        }
+      );
+      if (result != undefined) {
+        this.fileName = "";
+        this.text = "";
+        this.file = null;
+      }
+      this.isLoading = false;
+
+      console.log(result);
     },
   },
 };

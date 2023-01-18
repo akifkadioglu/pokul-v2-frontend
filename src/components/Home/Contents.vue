@@ -1,28 +1,25 @@
 <template>
   <div class="contents">
-    <v-card class="mt-5 mb-5" v-for="index in 5" :key="index">
+    <v-card class="mt-5 mb-5" v-for="(item, index) in notes" :key="index">
       <v-card-title primary-title>
         <v-avatar size="40" color="red">
           <div class="white--text">{{ "Akif".slice(0, 2).toUpperCase() }}</div>
         </v-avatar>
         <div class="ml-2">
-          <span>Akif</span>
-          <span class="ml-2 subtitle-2 text--secondary">@skadioglu20</span>
+          <span>{{ item.User.name }}</span>
+          <span class="ml-2 subtitle-2 text--secondary"
+            >@{{ item.User.username }}</span
+          >
         </div>
         <v-spacer />
-        <Options :id="index" />
+        <Options :id="item.ID" />
       </v-card-title>
       <v-card-text>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quisquam
-        assumenda nihil magnam sequi, reprehenderit hic veniam nam fugit
-        veritatis beatae. Amet hic tenetur, molestiae est sequi tempore debitis
-        corporis autem et similique fuga, vitae doloremque at. Ipsa quae
-        sapiente, doloribus quas ea commodi, autem cupiditate ipsum in
-        reiciendis facilis!
+        {{ item.content }}
       </v-card-text>
-      <v-card-actions>
+      <v-card-actions v-if="item.location != ''">
         <v-btn
-          href="https://twitter.com/Pokulnet"
+          :href="item.location"
           target="_blank"
           width="100%"
           color="secondary"
@@ -40,6 +37,23 @@ import Options from "./content_additions/Options.vue";
 export default {
   components: {
     Options,
+  },
+  mounted() {
+    this.getNotes();
+  },
+  data() {
+    return {
+      notes: [],
+    };
+  },
+  methods: {
+    async getNotes() {
+      var result = await this.$http.network(
+        this.$variables.GET,
+        this.$http_requests.NOTES
+      );
+      this.notes = result.result.data.notes;
+    },
   },
 };
 </script>
