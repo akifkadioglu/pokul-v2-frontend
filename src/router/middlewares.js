@@ -7,6 +7,7 @@ import { storage } from '../storage';
 export const middlewares = {
     auth(to, from, next) {
         if (
+            storage.pull(variables.TOKEN) == undefined ||
             storage.pull(variables.TOKEN) == null ||
             storage.pull(variables.TOKEN) == ""
         ) {
@@ -18,11 +19,13 @@ export const middlewares = {
 
     login(to, from, next) {
         if (
-            storage.pull(variables.TOKEN) != null
+            storage.pull(variables.TOKEN) == undefined ||
+            storage.pull(variables.TOKEN) == null ||
+            storage.pull(variables.TOKEN) == ""
         ) {
-            router.push({ name: routeNames.HOME });
+            next()
         }
-        next()
+        router.push({ name: routeNames.HOME });
     },
 
 
