@@ -18,4 +18,5 @@ export const icons = {
     FILE: 'attach_file',
     MORE: 'more_vert',
     REPORT: 'outlined_flag',
+    LOGOUT: 'logout'
 }

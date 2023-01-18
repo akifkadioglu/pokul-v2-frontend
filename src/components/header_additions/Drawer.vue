@@ -89,6 +89,16 @@ export default {
           page: null,
           func: () => this.$functions.switchDarkMode(this.$vuetify),
         },
+        {
+          title: this.$keys.LOGOUT,
+          icon: this.$icons.LOGOUT,
+          page: null,
+          func: () => {
+            localStorage.clear();
+            this.$router.push({ name: this.$routeNames.LOGIN });
+            this.$emit("closeDrawer");
+          },
+        },
       ],
     };
   },

@@ -20,6 +20,7 @@ export const functions = {
             return false;
         }
     },
+    
     callSnackBar(text) {
         store.state.snackbarText = text;
         store.state.isSnackbarOpen = true;

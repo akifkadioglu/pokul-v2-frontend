@@ -5,6 +5,7 @@ export const keys = {
     DARK_MODE: 'dark_mode',
     TURKISH: 'turkish',
     ENGLISH: 'english',
+    LOGOUT: 'logout',
 
     //pages
     MY_ACCOUNT: 'my_account',

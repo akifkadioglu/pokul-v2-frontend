@@ -31,5 +31,6 @@
   "send_note_placeholder": "Not için bir açıklama ekleyebilir veya hayatta neler olduğunu yazabilirsiniz.",
   "send_note_publish": "Yayınla",
 
-  "report": "Şikayet et"
+  "report": "Şikayet et",
+  "logout": "Çıkış yap"
 }

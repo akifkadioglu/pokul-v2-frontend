@@ -19,14 +19,10 @@ export const middlewares = {
 
     login(to, from, next) {
         if (
-            storage.pull(variables.TOKEN) == undefined ||
-            storage.pull(variables.TOKEN) == null ||
-            storage.pull(variables.TOKEN) == ""
+            storage.pull(variables.TOKEN) != null
         ) {
-            next()
+            router.push({ name: routeNames.HOME });
         }
-        router.push({ name: routeNames.HOME });
+        next()
     },
-
-
 }
