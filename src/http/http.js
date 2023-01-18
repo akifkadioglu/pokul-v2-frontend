@@ -46,8 +46,8 @@ export const http = {
                 break;
         }
         if (error != undefined && error.response.request.status == 401) {
-            storage.push(variables.TOKEN, null)
-            router.push({ name: routeNames.LOGIN })
+            storage.remove(variables.TOKEN)
+            router.push({ name: routeNames.INTRODUCTION })
         }
 
         return { result, error }

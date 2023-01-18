@@ -5,9 +5,7 @@ export const storage = {
         if (content == undefined | content == null | content == '') {
             return null
         }
-
         return cryption.aesdecrypt(content)
-
     },
 
     push(key, value) {
@@ -15,5 +13,11 @@ export const storage = {
         var newValue = cryption.aesencrypt(value)
 
         localStorage.setItem(newKey, newValue)
+    },
+
+    remove(key) {
+        var encKey = cryption.encrypt(key)
+
+        localStorage.removeItem(encKey)
     },
 }
