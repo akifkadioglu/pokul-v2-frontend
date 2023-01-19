@@ -1,6 +1,7 @@
 <template>
   <v-carousel
     show-arrows-on-hover
+    :light="!$vuetify.theme.dark"
     :prev-icon="$icons.BACK"
     :next-icon="$icons.NEXT"
     :delimiter-icon="$icons.LINE"
