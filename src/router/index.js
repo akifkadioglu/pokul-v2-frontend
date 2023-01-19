@@ -28,11 +28,12 @@ const routes = [
     beforeEnter: middlewares.auth,
   },
   {
-    path: '/hesabim',
+    path: '/kullanici/:username',
     name: 'Account',
     component: Account,
     beforeEnter: middlewares.auth,
-  },/* 
+  },
+  /* 
   {
     path: '/konferans',
     name: 'Conference',

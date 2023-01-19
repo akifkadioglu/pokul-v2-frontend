@@ -2,7 +2,9 @@
 export const variables = {
     APP_NAME: 'P-OKUL',
     MAIL_SUFFIX: '@posta.pau.edu.tr',
-    
+    USERNAME: 'username',
+    ID: 'id',
+
     //localeStorage
     IS_DARK_MODE: 'isDarkMode',
     TOKEN: 'token',

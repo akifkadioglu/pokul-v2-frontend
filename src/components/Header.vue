@@ -17,8 +17,7 @@
       <SearchBar />
 
       <v-spacer />
-
-      <ProfileButton class="ml-5 mr-2" />
+      <ProfileButton class="ml-5 mr-2" :username="$storage.pull($variables.USERNAME)" />
     </v-app-bar>
     <Drawer :drawer="drawer" @closeDrawer="drawer = false" />
   </div>

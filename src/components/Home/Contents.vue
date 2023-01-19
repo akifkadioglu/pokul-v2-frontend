@@ -1,15 +1,26 @@
 <template>
-  <div class="contents">
-    <v-card class="mt-5 mb-5" v-for="(item, index) in notes" :key="index">
+  <div class="contents mb-5">
+    <ProgressCircularC v-if="isLoading" class="mt-5" :position="'center'" />
+
+    <v-card
+      elevation="0"
+      class="card"
+      v-for="(item, index) in notes"
+      :key="index"
+      tile
+      outlined
+      :style="{
+        'border-color': $vuetify.theme.dark ? '#ffffff08' : '#00000008',
+      }"
+    >
       <v-card-title primary-title>
-        <v-avatar size="40" color="red">
-          <div class="white--text">{{ "Akif".slice(0, 2).toUpperCase() }}</div>
-        </v-avatar>
-        <div class="ml-2">
+        <ProfileButton :username="item.User.username" />
+
+        <div class="ml-2 subtitle-1 font-weight-bold">
           <span>{{ item.User.name }}</span>
-          <span class="ml-2 subtitle-2 text--secondary"
-            >@{{ item.User.username }}</span
-          >
+          <span class="ml-1 subtitle-2 text--secondary">
+            @{{ item.User.username }}
+          </span>
         </div>
         <v-spacer />
         <Options :id="item.ID" />
@@ -28,31 +39,60 @@
           {{ $t($keys.HOME_LINK) }}
         </v-btn>
       </v-card-actions>
+      <v-card-actions class="navbar">
+        <div v-for="(item, index) in actions" :key="index">
+          <v-btn icon>
+            <v-icon size="20">
+              {{ item.icon }}
+            </v-icon>
+          </v-btn>
+          <span class="caption" color="secondary"> {{ item.label }} </span>
+        </div>
+      </v-card-actions>
     </v-card>
   </div>
 </template>
 
 <script>
+import ProfileButton from "../header_additions/ProfileButton.vue";
 import Options from "./content_additions/Options.vue";
+import ProgressCircularC from "../ProgressCircularC.vue";
 export default {
   components: {
     Options,
+    ProfileButton,
+    ProgressCircularC,
   },
   mounted() {
     this.getNotes();
   },
   data() {
     return {
+      actions: [
+        {
+          icon: this.$icons.FAVORITE_BORDER,
+          label: "156",
+          func: () => {},
+        },
+        {
+          icon: this.$icons.SHARE,
+          label: "",
+          func: () => {},
+        },
+      ],
       notes: [],
+      isLoading: false,
     };
   },
   methods: {
     async getNotes() {
+      this.isLoading = true;
       var result = await this.$http.network(
         this.$variables.GET,
         this.$http_requests.NOTES
       );
       this.notes = result.result.data.notes;
+      this.isLoading = false;
     },
   },
 };
@@ -61,5 +101,11 @@ export default {
 .contents {
   margin: auto;
   max-width: 600px;
+}
+.card {
+  transition: 0.2s;
+}
+.card:hover {
+  background: rgba(0, 0, 0, 0.05);
 }
 </style>

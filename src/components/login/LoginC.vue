@@ -77,7 +77,12 @@ export default {
       );
       if (response.error == undefined) {
         alert(this.$t(this.$keys.LOGIN_WELCOME_MESSAGE));
+        var decode = this.$cryption.parseJwt(response.result.data.token);
+
         this.$storage.push(this.$variables.TOKEN, response.result.data.token);
+        this.$storage.push(this.$variables.USERNAME, decode.username);
+        this.$storage.push(this.$variables.ID, decode.user_id);
+
         this.$router.go(0);
         this.$router.push({ name: this.$routeNames.HOME });
       } else {

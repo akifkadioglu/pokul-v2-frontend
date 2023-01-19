@@ -30,7 +30,7 @@
         :key="index"
         dense
         exact
-        :to="item.page != null ? { name: item.page } : ''"
+        :to="item.page != null ? { name: item.page, params: item.params } : ''"
         active-class="teal--text"
         @click="item.func"
       >
@@ -41,7 +41,6 @@
           <v-list-item-title>{{ $t(item.title) }}</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
-
       <ChooseLanguages />
     </v-list>
   </v-navigation-drawer>
@@ -65,6 +64,7 @@ export default {
           title: this.$keys.HOME_PAGE,
           icon: this.$icons.HOME,
           page: this.$routeNames.HOME,
+          params: {},
           func: () => {
             this.$emit("closeDrawer");
           },
@@ -73,6 +73,9 @@ export default {
           title: this.$keys.MY_ACCOUNT,
           icon: this.$icons.ACCOUNT,
           page: this.$routeNames.ACCOUNT,
+          params: {
+            username: this.$storage.pull(this.$variables.USERNAME) ?? " ",
+          },
           func: () => {
             this.$emit("closeDrawer");
           },
@@ -87,12 +90,14 @@ export default {
           title: this.$keys.DARK_MODE,
           icon: this.$icons.DARK_MODE,
           page: null,
+          params: {},
           func: () => this.$functions.switchDarkMode(this.$vuetify),
         },
         {
           title: this.$keys.LOGOUT,
           icon: this.$icons.LOGOUT,
           page: null,
+          params: {},
           func: () => {
             localStorage.clear();
             this.$router.push({ name: this.$routeNames.LOGIN });

@@ -20,7 +20,9 @@ import { icons } from './icons'
 import { storage } from './storage'
 import { http } from "./http/http"
 import { http_requests } from './http/http-requests'
+import { cryption } from './cryption'
 
+Vue.prototype.$cryption = cryption
 Vue.prototype.$http_requests = http_requests
 Vue.prototype.$http = http
 Vue.prototype.$storage = storage

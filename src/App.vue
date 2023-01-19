@@ -81,4 +81,8 @@ export default {
 .main {
   height: 100vh;
 }
+.navbar {
+  display: flex;
+  justify-content: space-evenly;
+}
 </style>

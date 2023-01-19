@@ -34,7 +34,7 @@ export default {
       windowHeight: window.innerHeight,
       items: [
         {
-          src: "https://www.p-okul.net/socialmedia.png",
+          src: "https://www.p-okul.net/logo.png",
         },
         {
           src: "https://ocakmedya.com/wp-content/uploads/2022/10/0x0-dunyadan-muhtesem-doga-manzaralari-1512736354182.jpg",

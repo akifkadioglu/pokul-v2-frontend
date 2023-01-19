@@ -4,8 +4,17 @@ const AES = require('crypto-js/aes');
 var CryptoJS = require("crypto-js");
 import router from './router'
 import { routeNames } from "./routes"
+const base64url = require("base64url");
 
 export const cryption = {
+    parseJwt(token) {
+        try {
+            return JSON.parse(base64url.decode(token.split(".")[1]));
+        } catch (e) {
+            return null;
+        }
+    },
+    
     encrypt(value) {
         if (value == null) {
             return
