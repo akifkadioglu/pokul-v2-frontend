@@ -25,7 +25,9 @@
   "login_password": "Password",
   "login_password_confirmation": "Confirm Password",
   "login_welcome_message": "Welcome to P-Okul",
-
+  "login_department": "Department",
+  "there_is_no_such_department":"There is no such department in the university.",
+  
   "home_link": "link",
 
   "send_note_placeholder": "You can add a description for the note or write what happened in life.",

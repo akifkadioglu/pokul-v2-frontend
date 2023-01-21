@@ -35,6 +35,8 @@ export const keys = {
     LOGIN_PASSWORD: 'login_password',
     LOGIN_PASSWORD_CONFIRMATION: 'login_password_confirmation',
     LOGIN_WELCOME_MESSAGE: 'login_welcome_message',
+    LOGIN_DEGREE: 'login_department',
+    LOGIN_NO_SUCH_DEPARTMENT: 'there_is_no_such_department',
 
     //home page 
     HOME_LINK: 'home_link',

@@ -5,4 +5,5 @@ export const http_requests = {
     SEND_NOTE: 'send-note',
     REPORT_NOTE: 'report-note',
     NOTES: 'notes',
+    GET_DEPARTMENT: 'department'
 }

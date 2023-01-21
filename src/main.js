@@ -11,6 +11,7 @@ import VueAxios from 'vue-axios'
 import '../node_modules/ambient-image/dist/lib/ambient-image.min.css'
 import 'material-icons/iconfont/material-icons.css';
 require('./http/http-common');
+import "vue-select/dist/vue-select.css";
 
 import { variables } from './variables'
 import { routeNames } from './routes'
@@ -21,6 +22,9 @@ import { storage } from './storage'
 import { http } from "./http/http"
 import { http_requests } from './http/http-requests'
 import { cryption } from './cryption'
+import vSelect from "vue-select";
+
+Vue.component("v-select2", vSelect);
 
 Vue.prototype.$cryption = cryption
 Vue.prototype.$http_requests = http_requests

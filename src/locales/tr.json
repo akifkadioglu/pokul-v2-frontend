@@ -25,6 +25,8 @@
   "login_password": "Şifre",
   "login_password_confirmation": "Şifreyi Onayla",
   "login_welcome_message": "P-Okul'a Hoş geldin",
+  "login_department": "Bölüm",
+  "there_is_no_such_department":"Üniversitede böyle bir bölüm yok.",
 
   "home_link": "Bağlantı",
 

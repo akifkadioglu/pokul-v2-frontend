@@ -49,7 +49,9 @@ export const http = {
             storage.remove(variables.TOKEN)
             router.push({ name: routeNames.INTRODUCTION })
         }
-
+        if (error != null) {
+            alert(error.response.data.message);
+        }
         return { result, error }
     }
 }

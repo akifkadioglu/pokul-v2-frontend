@@ -17,8 +17,8 @@
             :placeholder="$t($keys.LOGIN_NAME)"
             v-model="registerForm.name"
             filled
-            rounded
             dense
+            rounded
             :rules="[rules.required, rules.name]"
           />
 
@@ -40,10 +40,23 @@
             @click:append="isPasswordConfDisplay = !isPasswordConfDisplay"
             :type="isPasswordConfDisplay ? 'text' : 'password'"
             filled
-            rounded
             dense
+            rounded
             :rules="[rules.required]"
           />
+          <v-autocomplete
+            filled
+            shaped
+            v-model="registerForm.department_id"
+            :placeholder="$t($keys.LOGIN_DEGREE)"
+            dense
+            :rules="[rules.required]"
+            :items="department"
+            item-value="ID"
+            item-text="name"
+            :no-data-text="$t($keys.LOGIN_NO_SUCH_DEPARTMENT)"
+          />
+
           <div class="text-center">
             <v-btn
               color="primary"
@@ -63,6 +76,9 @@
 
 <script>
 export default {
+  mounted() {
+    this.getDepartment();
+  },
   data() {
     return {
       rules: {
@@ -86,11 +102,23 @@ export default {
         name: "",
         password: "",
         password_confirmation: "",
+        department_id: "",
       },
       isLoading: false,
+      department: [],
     };
   },
   methods: {
+    async getDepartment() {
+      this.isLoading = true;
+      let response = await this.$http.network(
+        this.$variables.GET,
+        this.$http_requests.GET_DEPARTMENT
+      );
+      this.department = response.result.data.departments;
+      this.isLoading = false;
+    },
+
     async register() {
       if (!this.$refs.form.validate()) {
         return;
@@ -99,8 +127,7 @@ export default {
       let response = await this.$http.network(
         this.$variables.POST,
         this.$http_requests.REGISTER,
-        this.registerForm,
-        null
+        this.registerForm
       );
       if (response.error == undefined) {
         alert(this.$t(this.$keys.LOGIN_WELCOME_MESSAGE));

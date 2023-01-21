@@ -5,7 +5,7 @@
       <v-card-text>
         <v-form ref="form" v-model="valid" lazy-validation>
           <v-text-field
-            v-model="loginForm.email"
+            v-model="loginForm.username"
             :placeholder="$t($keys.LOGIN_EMAIL)"
             :suffix="$variables.MAIL_SUFFIX"
             filled
@@ -57,7 +57,7 @@ export default {
       valid: true,
       isPasswordDisplay: false,
       loginForm: {
-        email: "",
+        username: "",
         password: "",
       },
       isLoading: false,
@@ -72,8 +72,7 @@ export default {
       let response = await this.$http.network(
         this.$variables.POST,
         this.$http_requests.LOGIN,
-        this.loginForm,
-        null
+        this.loginForm
       );
       if (response.error == undefined) {
         alert(this.$t(this.$keys.LOGIN_WELCOME_MESSAGE));
@@ -85,8 +84,6 @@ export default {
 
         this.$router.go(0);
         this.$router.push({ name: this.$routeNames.HOME });
-      } else {
-        alert(response.error.response.data.message);
       }
       this.isLoading = false;
     },

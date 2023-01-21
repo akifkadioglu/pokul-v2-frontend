@@ -15,13 +15,18 @@
     >
       <v-card-title primary-title>
         <ProfileButton :username="item.User.username" />
-
-        <div class="ml-2 subtitle-1 font-weight-bold">
-          <span>{{ item.User.name }}</span>
-          <span class="ml-1 subtitle-2 text--secondary">
-            @{{ item.User.username }}
-          </span>
+        <div>
+          <div class="ml-2 subtitle-1 font-weight-bold">
+            <span>{{ item.User.name }}</span>
+            <span class="ml-1 subtitle-2 text--secondary">
+              @{{ item.User.username }}
+            </span>
+          </div>
+          <div class="ml-2 caption">
+            {{ item.Department != null ? item.Department.name : "" }}
+          </div>
         </div>
+
         <v-spacer />
         <Options :id="item.ID" />
       </v-card-title>
