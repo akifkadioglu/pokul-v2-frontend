@@ -5,11 +5,12 @@ router.prototype.push = function push(location) {
 }
 
 export const routeNames = {
-    HOME: 'Home',
-    ACCOUNT: 'Account',
-    INTRODUCTION: 'Introduction',
-    CONFERENCE: 'Conference',
-    LOGIN: 'Login'
+    HOME:               'Home',
+    ACCOUNT:            'Account',
+    INTRODUCTION:       'Introduction',
+    CONFERENCE:         'Conference',
+    LOGIN:              'Login',
+    ANOTHER_ACCOUNT:    'AnotherAccount'
 }
 
 

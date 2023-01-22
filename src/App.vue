@@ -85,4 +85,8 @@ export default {
   display: flex;
   justify-content: space-evenly;
 }
+.contents {
+  margin: auto;
+  max-width: 600px;
+}
 </style>

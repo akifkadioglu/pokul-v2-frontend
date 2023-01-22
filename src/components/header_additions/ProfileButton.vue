@@ -1,6 +1,9 @@
 <template>
   <v-btn
-    :to="{ name: $routeNames.ACCOUNT, params: { username: username ?? ' ' } }"
+    :to="{
+      name: $routeNames.ACCOUNT,
+      params: { username: username ?? ' ' },
+    }"
     icon
     dark
     aria-label="account-button"

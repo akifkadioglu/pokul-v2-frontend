@@ -46,7 +46,10 @@ export const keys = {
     SEND_NOTE_PLACEHOLDER: "send_note_placeholder",
     SEND_NOTE_PUBLISH: 'send_note_publish',
 
-    REPORT: 'report'
+    REPORT: 'report',
+
+    //account
+    EDIT_PROFILE: 'edit_profile'
 
 }
 

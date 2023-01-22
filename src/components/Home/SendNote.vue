@@ -1,5 +1,5 @@
 <template>
-  <div class="post">
+  <div class="contents">
     <v-card
       outlined
       class="pa-3"
@@ -121,10 +121,6 @@ export default {
 </script>
 
 <style>
-.post {
-  margin: auto;
-  max-width: 600px;
-}
 .file-input {
   align-items: center;
   display: flex;

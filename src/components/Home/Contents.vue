@@ -106,10 +106,7 @@ export default {
 };
 </script>
 <style scoped>
-.contents {
-  margin: auto;
-  max-width: 600px;
-}
+
 .card {
   transition: 0.2s;
 }

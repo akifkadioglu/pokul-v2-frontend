@@ -1,7 +1,7 @@
 <template>
   <v-container class="contents">
     <div class="title mb-3 navbar">
-      {{ $storage.pull($variables.USERNAME) }}
+      {{ $route.params.username }}
     </div>
     <div class="custom-navbar">
       <v-avatar size="150" color="red">
@@ -11,18 +11,6 @@
       <div class="informations pl-5">
         <div class="font-weight-bold mb-3">
           {{ $storage.pull($variables.NAME) }}
-        </div>
-        <div class="navbar">
-          <v-btn
-            width="83%"
-            depressed
-            class="caption font-weight-bold text-capitalize mb-3"
-          >
-            {{ $t($keys.EDIT_PROFILE) }}
-          </v-btn>
-          <v-btn icon>
-            <v-icon>{{ $icons.MORE }}</v-icon>
-          </v-btn>
         </div>
 
         <div class="overline mb-3">

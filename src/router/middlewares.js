@@ -17,6 +17,7 @@ export const middlewares = {
         next()
     },
 
+
     login(to, from, next) {
         if (
             storage.pull(variables.TOKEN) != null
@@ -25,4 +26,11 @@ export const middlewares = {
         }
         next()
     },
+
+    checkAccount(to, from, next) {
+        if (to.params.username != storage.pull(variables.USERNAME)) {
+            router.push({ name: routeNames.ANOTHER_ACCOUNT });
+        }
+        next()
+    }
 }

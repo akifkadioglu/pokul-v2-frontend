@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Account from '../views/Account.vue'
+import AnotherAccount from '../views/AnotherAccount.vue'
 import Introduction from '../views/Introduction.vue'
 import Login from '../views/Login.vue'
 /* import Conference from '../views/Conference.vue'
@@ -31,7 +32,19 @@ const routes = [
     path: '/kullanici/:username',
     name: 'Account',
     component: Account,
-    beforeEnter: middlewares.auth,
+    beforeEnter: (to, from, next) => {
+      middlewares.auth(to, from, next)
+      middlewares.checkAccount(to, from, next)
+    },
+  },
+
+  {
+    path: '/kullanici/:username',
+    name: 'AnotherAccount',
+    component: AnotherAccount,
+    beforeEnter: (to, from, next) => {
+      middlewares.auth(to, from, next)
+    },
   },
   /* 
   {

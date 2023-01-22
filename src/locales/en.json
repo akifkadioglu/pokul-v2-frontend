@@ -8,7 +8,7 @@
   "english": "English",
   "search_p_okul": "Search P-Okul",
   "delete": "Delete",
-  
+
   "dark_mode_activated": "Dark mode activated",
   "light_mode_activated": "Light mode activated",
   "app_language_changed": "Application language changed",
@@ -35,5 +35,6 @@
   "send_note_publish": "Publish",
 
   "report": "Report",
-  "logout": "Logout"
+  "logout": "Logout",
+  "edit_profile": "Edit Profile"
 }
