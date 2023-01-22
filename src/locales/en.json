@@ -7,7 +7,8 @@
   "turkish": "Turkish",
   "english": "English",
   "search_p_okul": "Search P-Okul",
-
+  "delete": "Delete",
+  
   "dark_mode_activated": "Dark mode activated",
   "light_mode_activated": "Light mode activated",
   "app_language_changed": "Application language changed",
@@ -26,8 +27,8 @@
   "login_password_confirmation": "Confirm Password",
   "login_welcome_message": "Welcome to P-Okul",
   "login_department": "Department",
-  "there_is_no_such_department":"There is no such department in the university.",
-  
+  "there_is_no_such_department": "There is no such department in the university.",
+
   "home_link": "link",
 
   "send_note_placeholder": "You can add a description for the note or write what happened in life.",

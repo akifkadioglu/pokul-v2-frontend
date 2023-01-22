@@ -21,5 +21,6 @@ export const icons = {
     LOGOUT: 'logout',
     SHARE: 'share',
     FAVORITE_BORDER: 'favorite_border',
-    FAVORITE: 'favorite'
+    FAVORITE: 'favorite',
+    DELETE: 'delete_outline',
 }

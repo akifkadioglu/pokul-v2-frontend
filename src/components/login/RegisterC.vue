@@ -113,7 +113,7 @@ export default {
       this.isLoading = true;
       let response = await this.$http.network(
         this.$variables.GET,
-        this.$http_requests.GET_DEPARTMENT
+        this.$http_requests.GET_DEPARTMENTS
       );
       this.department = response.result.data.departments;
       this.isLoading = false;

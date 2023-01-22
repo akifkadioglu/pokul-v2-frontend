@@ -6,6 +6,7 @@ export const keys = {
     TURKISH: 'turkish',
     ENGLISH: 'english',
     LOGOUT: 'logout',
+    DELETE: 'delete',
 
     //pages
     MY_ACCOUNT: 'my_account',

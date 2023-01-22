@@ -10,7 +10,7 @@ export const http = {
         let error
         switch (method) {
             case variables.GET:
-                await axios.get(url, body, { param: parameters, headers: headers }).then((r) => {
+                await axios.get(url, body, { params: parameters, headers: headers }).then((r) => {
                     result = r
                 }).catch((e) => {
                     error = e
@@ -18,7 +18,7 @@ export const http = {
                 break;
 
             case variables.POST:
-                await axios.post(url, body, { param: parameters, headers: headers }).then((r) => {
+                await axios.post(url, body, { params: parameters, headers: headers }).then((r) => {
                     result = r
                 }).catch((e) => {
                     error = e
@@ -26,7 +26,7 @@ export const http = {
                 break;
 
             case variables.PUT:
-                await axios.put(url, body, { param: parameters, headers: headers }).then((r) => {
+                await axios.put(url, body, { params: parameters, headers: headers }).then((r) => {
                     result = r
                 }).catch((e) => {
                     error = e
@@ -34,7 +34,7 @@ export const http = {
                 break;
 
             case variables.DELETE:
-                await axios.delete(url, body, { param: parameters, headers: headers }).then((r) => {
+                await axios.delete(url, { params: parameters, headers: headers }).then((r) => {
                     result = r
                 }).catch((e) => {
                     error = e

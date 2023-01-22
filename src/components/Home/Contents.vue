@@ -28,7 +28,10 @@
         </div>
 
         <v-spacer />
-        <Options :id="item.ID" />
+        <Options
+          :id="item.ID"
+          :isUsersContent="item.User.ID == $storage.pull($variables.ID)"
+        />
       </v-card-title>
       <v-card-text>
         {{ item.content }}

@@ -18,8 +18,9 @@
         v-for="(item, index) in options"
         :key="index"
         @click="item.func"
+        v-show="isUsersContent || !item.isForTheUser"
       >
-        <v-icon>{{ $icons.REPORT }}</v-icon>
+        <v-icon>{{ item.icon }}</v-icon>
         <v-list-item-title class="black--text ml-2">
           {{ $t(item.title) }}
         </v-list-item-title>
@@ -34,28 +35,56 @@ export default {
     id: {
       default: "",
     },
+    isUsersContent: {
+      type: Boolean,
+      default: false,
+    },
   },
+
   data() {
     return {
       options: [
         {
           title: this.$keys.REPORT,
+          icon: this.$icons.REPORT,
+          isForTheUser: false,
           func: () => this.reportContent(),
+        },
+        {
+          title: this.$keys.DELETE,
+          icon: this.$icons.DELETE,
+          isForTheUser: true,
+          func: () => this.deleteContent(),
         },
       ],
     };
   },
+
   methods: {
     async reportContent() {
-      var result = await this.$http.network(
+      var response = await this.$http.network(
         this.$variables.POST,
         this.$http_requests.REPORT_NOTE,
         {
           note_id: this.id,
         }
       );
-      if (result.result != undefined) {
-        this.$functions.callSnackBar(result.result.data.message);
+      if (response.result != undefined) {
+        this.$functions.callSnackBar(response.result.data.message);
+      }
+    },
+    async deleteContent() {
+      let response = await this.$http.network(
+        this.$variables.DELETE,
+        this.$http_requests.DELETE_NOTE,
+        {},
+        {
+          note_id: this.id,
+        },
+        {}
+      );
+      if (response.result != undefined) {
+        this.$functions.callSnackBar(response.result.data.message);
       }
     },
   },

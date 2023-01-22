@@ -7,6 +7,7 @@
   "turkish": "Türkçe",
   "english": "İngilizce",
   "search_p_okul": "P-Okul'da Ara",
+  "delete": "Sil",
 
   "dark_mode_activated": "Karanlık mod etkinleştirildi",
   "light_mode_activated": "Aydınlık mod etkinleştirildi",
@@ -26,7 +27,7 @@
   "login_password_confirmation": "Şifreyi Onayla",
   "login_welcome_message": "P-Okul'a Hoş geldin",
   "login_department": "Bölüm",
-  "there_is_no_such_department":"Üniversitede böyle bir bölüm yok.",
+  "there_is_no_such_department": "Üniversitede böyle bir bölüm yok.",
 
   "home_link": "Bağlantı",
 
