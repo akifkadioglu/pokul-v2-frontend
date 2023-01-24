@@ -1,52 +1,36 @@
 <template>
   <v-container class="contents">
     <div class="title mb-3 navbar">
-      {{ $storage.pull($variables.USERNAME) }}
+      {{
+        isAuthUser ? $storage.pull($variables.USERNAME) : $route.params.username
+      }}
     </div>
-    <div class="custom-navbar">
-      <v-avatar size="150" color="red">
-        <v-icon class="white--text">{{ $icons.ACCOUNT }}</v-icon>
-      </v-avatar>
-
-      <div class="informations pl-5">
-        <div class="font-weight-bold mb-3">
-          {{ $storage.pull($variables.NAME) }}
-        </div>
-        <div class="navbar">
-          <v-btn
-            width="83%"
-            depressed
-            class="caption font-weight-bold text-capitalize mb-3"
-          >
-            {{ $t($keys.EDIT_PROFILE) }}
-          </v-btn>
-          <v-btn icon>
-            <v-icon>{{ $icons.MORE }}</v-icon>
-          </v-btn>
-        </div>
-
-        <div class="overline mb-3">
-          {{ $storage.pull($variables.DEPARTMENT) }}
-        </div>
-        <div class="custom-navbar">
-          <div>2 Gönderi</div>
-          <div class="ml-5">37 Yıldız</div>
-        </div>
-      </div>
-    </div>
-    <v-divider></v-divider>
+    <Information :isAuthUser="isAuthUser" />
+    <transition name="fade" mode="out-in">
+      <FollowedDepartmentsBar v-if="isAuthUser" />
+    </transition>
+    <v-divider />
+    <Contents />
   </v-container>
 </template>
 
 <script>
-export default {};
+import FollowedDepartmentsBar from "../components/Account/FollowedDepartmentsBar.vue";
+import Information from "../components/Account/Information.vue";
+import Contents from "../components/Home/Contents.vue";
+export default {
+  components: {
+    FollowedDepartmentsBar,
+    Information,
+    Contents,
+  },
+  computed: {
+    isAuthUser() {
+      return (
+        this.$route.params.username ==
+        this.$storage.pull(this.$variables.USERNAME)
+      );
+    },
+  },
+};
 </script>
-<style scoped>
-.custom-navbar {
-  display: flex;
-  margin: 25px 0 25px 0;
-}
-.informations {
-  margin: auto;
-}
-</style>

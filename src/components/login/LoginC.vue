@@ -3,7 +3,7 @@
     <v-card max-width="400px">
       <v-card-title primary-title> Giriş yap </v-card-title>
       <v-card-text>
-        <v-form ref="form" v-model="valid" lazy-validation>
+        <v-form ref="form" lazy-validation>
           <v-text-field
             v-model="loginForm.username"
             :placeholder="$t($keys.LOGIN_EMAIL)"
@@ -54,7 +54,6 @@ export default {
           );
         },
       },
-      valid: true,
       isPasswordDisplay: false,
       loginForm: {
         username: "",

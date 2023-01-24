@@ -23,4 +23,5 @@ export const icons = {
     FAVORITE_BORDER: 'favorite_border',
     FAVORITE: 'favorite',
     DELETE: 'delete_outline',
+    CHANGE: 'published_with_changes',
 }

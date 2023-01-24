@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Account from '../views/Account.vue'
-import AnotherAccount from '../views/AnotherAccount.vue'
+import EditProfile from '../components/Account/settings/EditProfile.vue'
 import Introduction from '../views/Introduction.vue'
 import Login from '../views/Login.vue'
 /* import Conference from '../views/Conference.vue'
@@ -34,18 +34,17 @@ const routes = [
     component: Account,
     beforeEnter: (to, from, next) => {
       middlewares.auth(to, from, next)
-      middlewares.checkAccount(to, from, next)
     },
   },
-
   {
-    path: '/kullanici/:username',
-    name: 'AnotherAccount',
-    component: AnotherAccount,
+    path: '/hesabi-duzenle',
+    name: 'EditProfile',
+    component: EditProfile,
     beforeEnter: (to, from, next) => {
       middlewares.auth(to, from, next)
     },
   },
+
   /* 
   {
     path: '/konferans',

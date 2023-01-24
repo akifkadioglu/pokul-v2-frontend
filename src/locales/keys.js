@@ -7,7 +7,9 @@ export const keys = {
     ENGLISH: 'english',
     LOGOUT: 'logout',
     DELETE: 'delete',
-
+    CLOSE: 'close',
+    DEPARTMENTS: 'departments',
+    
     //pages
     MY_ACCOUNT: 'my_account',
     HOME_PAGE: 'home_page',

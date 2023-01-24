@@ -10,7 +10,8 @@ export const routeNames = {
     INTRODUCTION:       'Introduction',
     CONFERENCE:         'Conference',
     LOGIN:              'Login',
-    ANOTHER_ACCOUNT:    'AnotherAccount'
+    ANOTHER_ACCOUNT:    'AnotherAccount',
+    EDIT_PROFILE:       'EditProfile'
 }
 
 

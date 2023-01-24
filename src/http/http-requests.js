@@ -8,4 +8,5 @@ export const http_requests = {
     GET_DEPARTMENTS: 'departments',
     CHANGE_USER_DEPARTMENT: 'change-user-department',
     DELETE_NOTE: 'delete-note',
+    GET_FOLLOWED_DEPARTMENTS: 'followed-departments'
 }
