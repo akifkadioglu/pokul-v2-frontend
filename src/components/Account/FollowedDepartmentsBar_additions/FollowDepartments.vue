@@ -1,8 +1,10 @@
 <template>
   <div class="text-center">
-    <v-dialog v-model="isDialogOpen" width="500" persistent>
+    <v-dialog v-model="dialog" width="500" persistent>
       <v-card>
-        <v-card-title> {{ $t($keys.ACCOUNT_CHANGE_DEPARTMENT) }} </v-card-title>
+        <v-card-title>
+          {{ $t($keys.ACCOUNT_FOLLOW_A_DEPARTMENT) }}
+        </v-card-title>
 
         <v-card-text>
           <v-form ref="form" lazy-validation>
@@ -14,7 +16,7 @@
                 :placeholder="$t($keys.DEPARTMENTS)"
                 dense
                 :rules="[rules.required]"
-                :items="department"
+                :items="departments"
                 item-value="ID"
                 item-text="name"
                 :no-data-text="$t($keys.LOGIN_NO_SUCH_DEPARTMENT)"
@@ -23,7 +25,7 @@
               <v-btn
                 class="mt-1"
                 :loading="isLoading"
-                @click="saveDepartment"
+                @click="followDepartments"
                 icon
               >
                 <v-icon>{{ $icons.CHANGE }}</v-icon>
@@ -31,6 +33,8 @@
             </div>
           </v-form>
         </v-card-text>
+
+        <v-divider></v-divider>
 
         <v-card-actions>
           <v-spacer></v-spacer>
@@ -45,49 +49,42 @@
 <script>
 export default {
   props: {
-    isDialogOpen: {
+    dialog: {
       type: Boolean,
       default: false,
     },
   },
   mounted() {
-    this.getDepartment();
+    this.getDepartments();
   },
   data() {
     return {
       rules: {
         required: (value) => !!value || this.$t(this.$keys.LOGIN_REQIRED_CHECK),
       },
-      department: [],
-      department_id: "",
       isLoading: false,
+      department_id: "",
+      departments: [],
     };
   },
   methods: {
-    async getDepartment() {
-      this.isLoading = true;
-      this.department = await this.$globalRequests.getDepartments();
-      this.isLoading = false;
-    },
-
-    async saveDepartment() {
-      if (!this.$refs.form.validate()) {
-        return;
-      }
+    async followDepartments() {
       this.isLoading = true;
       let response = await this.$http.network(
         this.$variables.POST,
-        this.$http_requests.CHANGE_USER_DEPARTMENT,
+        this.$http_requests.FOLLOW_DEPARTMENTS,
         { department_id: this.department_id }
       );
-      if (response.result != null && response.result.data.is_updated) {
-        this.$storage.push(
-          this.$variables.DEPARTMENT,
-          this.department.find((x) => x.ID === this.department_id).name
-        );
-        alert("kaydedildi");
+      if (response.error != null) {
+        this.isLoading = false;
+      }
+      if (response.result != undefined) {
+        this.$functions.callSnackBar(response.result.data.message);
       }
       this.isLoading = false;
+    },
+    async getDepartments() {
+      this.departments = await this.$globalRequests.getDepartments();
     },
   },
 };

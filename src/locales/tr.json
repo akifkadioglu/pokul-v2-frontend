@@ -38,5 +38,8 @@
 
   "report": "Şikayet et",
   "logout": "Çıkış yap",
-  "edit_profile": "Profili Düzenle"
+
+  "edit_profile": "Profili Düzenle",
+  "follow_a_department": "Bir Bölümü takip et",
+  "change_department": "Bölümünü değiştir"
 }

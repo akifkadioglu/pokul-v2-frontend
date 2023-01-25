@@ -20,7 +20,7 @@ export const icons = {
     REPORT: 'outlined_flag',
     LOGOUT: 'logout',
     SHARE: 'share',
-    FAVORITE_BORDER: 'favorite_border',
+    FAVORITE_BORDER: 'star_outline',
     FAVORITE: 'favorite',
     DELETE: 'delete_outline',
     CHANGE: 'published_with_changes',

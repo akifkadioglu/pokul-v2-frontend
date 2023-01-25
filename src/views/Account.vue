@@ -10,7 +10,7 @@
       <FollowedDepartmentsBar v-if="isAuthUser" />
     </transition>
     <v-divider />
-    <Contents />
+    <Contents :notes="notes" :isLoading="isLoading" />
   </v-container>
 </template>
 
@@ -24,12 +24,41 @@ export default {
     Information,
     Contents,
   },
+  mounted() {
+    this.getAnyUserNotes();
+  },
   computed: {
     isAuthUser() {
       return (
         this.$route.params.username ==
         this.$storage.pull(this.$variables.USERNAME)
       );
+    },
+  },
+  watch: {
+    "$route.params.username"() {
+      this.getAnyUserNotes();
+    },
+  },
+  data() {
+    return {
+      authUsersNotes: [],
+      notes: [],
+      isLoading: false,
+    };
+  },
+
+  methods: {
+    async getAnyUserNotes() {
+      this.isLoading = true;
+      var result = await this.$http.network(
+        this.$variables.GET,
+        this.$http_requests.ANY_USER_NOTES,
+        null,
+        { username: this.$route.params.username }
+      );
+      this.notes = result.result.data.notes;
+      this.isLoading = false;
     },
   },
 };

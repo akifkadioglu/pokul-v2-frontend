@@ -9,7 +9,7 @@ export const keys = {
     DELETE: 'delete',
     CLOSE: 'close',
     DEPARTMENTS: 'departments',
-    
+
     //pages
     MY_ACCOUNT: 'my_account',
     HOME_PAGE: 'home_page',
@@ -51,8 +51,9 @@ export const keys = {
     REPORT: 'report',
 
     //account
-    EDIT_PROFILE: 'edit_profile'
-
+    EDIT_PROFILE: 'edit_profile',
+    ACCOUNT_FOLLOW_A_DEPARTMENT: 'follow_a_department',
+    ACCOUNT_CHANGE_DEPARTMENT: 'change_department',
 }
 
 

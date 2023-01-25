@@ -66,13 +66,20 @@ import ProfileButton from "../header_additions/ProfileButton.vue";
 import Options from "./content_additions/Options.vue";
 import ProgressCircularC from "../ProgressCircularC.vue";
 export default {
+  props: {
+    notes: {
+      type: Array,
+      default: () => [],
+    },
+    isLoading: {
+      type: Boolean,
+      default: false,
+    },
+  },
   components: {
     Options,
     ProfileButton,
     ProgressCircularC,
-  },
-  mounted() {
-    this.getNotes();
   },
   data() {
     return {
@@ -88,25 +95,11 @@ export default {
           func: () => {},
         },
       ],
-      notes: [],
-      isLoading: false,
     };
-  },
-  methods: {
-    async getNotes() {
-      this.isLoading = true;
-      var result = await this.$http.network(
-        this.$variables.GET,
-        this.$http_requests.NOTES
-      );
-      this.notes = result.result.data.notes;
-      this.isLoading = false;
-    },
   },
 };
 </script>
 <style scoped>
-
 .card {
   transition: 0.2s;
 }

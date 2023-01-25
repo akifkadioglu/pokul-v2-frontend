@@ -10,7 +10,7 @@ export const http = {
         let error
         switch (method) {
             case variables.GET:
-                await axios.get(url, body, { params: parameters, headers: headers }).then((r) => {
+                await axios.get(url, { params: parameters, headers: headers }).then((r) => {
                     result = r
                 }).catch((e) => {
                     error = e

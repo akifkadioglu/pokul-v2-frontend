@@ -21,8 +21,10 @@ import { storage } from './storage'
 import { http } from "./http/http"
 import { http_requests } from './http/http-requests'
 import { cryption } from './cryption'
+import { global_requests } from './http/global-requests'
 
 Vue.prototype.$cryption = cryption
+Vue.prototype.$globalRequests = global_requests
 Vue.prototype.$http_requests = http_requests
 Vue.prototype.$http = http
 Vue.prototype.$storage = storage
