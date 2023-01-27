@@ -6,6 +6,7 @@ export const variables = {
     NAME: 'name',
     ID: 'id',
     DEPARTMENT: 'department',
+    IMAGE_URL: 'image_url',
 
     //localeStorage
     IS_DARK_MODE: 'isDarkMode',

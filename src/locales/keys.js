@@ -9,7 +9,12 @@ export const keys = {
     DELETE: 'delete',
     CLOSE: 'close',
     DEPARTMENTS: 'departments',
-
+    USERNAME: 'username',
+    SAVE: 'save',
+    REQIRED: 'required',
+    WRONG_CHARACTER_COUNT: 'wrong_character_count',
+    NAME: 'name',
+    
     //pages
     MY_ACCOUNT: 'my_account',
     HOME_PAGE: 'home_page',
@@ -54,6 +59,10 @@ export const keys = {
     EDIT_PROFILE: 'edit_profile',
     ACCOUNT_FOLLOW_A_DEPARTMENT: 'follow_a_department',
     ACCOUNT_CHANGE_DEPARTMENT: 'change_department',
+    CHANGE_PASSWORD: 'change_password',
+    CURRENTLY_PASSWORD: 'currently_password',
+    PASSWORD: 'password',
+    PASSWORD_CONFIRMATION: 'password_confirmation',
 }
 
 

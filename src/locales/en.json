@@ -10,7 +10,12 @@
   "delete": "Delete",
   "close": "Close",
   "departments": "Departments",
-
+  "username": "Username",
+  "save": "Save",
+  "required": "Required",
+  "wrong_character_count": "Wrong character count:",
+  "name": "Name",
+  
   "dark_mode_activated": "Dark mode activated",
   "light_mode_activated": "Light mode activated",
   "app_language_changed": "Application language changed",
@@ -38,8 +43,12 @@
 
   "report": "Report",
   "logout": "Logout",
-  
+
   "edit_profile": "Edit Profile",
   "follow_a_department": "Follow a department",
-  "change_department":"Change Department"
+  "change_department": "Change Department",
+  "change_password": "Change password",
+  "currently_password": "Currently password",
+  "password": "Password",
+  "password_confirmation": "Password confirmation"
 }

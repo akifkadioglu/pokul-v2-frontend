@@ -11,7 +11,8 @@ export const routeNames = {
     CONFERENCE:         'Conference',
     LOGIN:              'Login',
     ANOTHER_ACCOUNT:    'AnotherAccount',
-    EDIT_PROFILE:       'EditProfile'
+    EDIT_PROFILE:       'EditProfile',
+    CHANGE_PASSWORD:    'ChangePassword'
 }
 
 

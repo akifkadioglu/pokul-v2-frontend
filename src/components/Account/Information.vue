@@ -1,8 +1,6 @@
 <template>
   <div class="information">
-    <v-avatar size="150" color="red">
-      <v-icon class="white--text">{{ $icons.ACCOUNT }}</v-icon>
-    </v-avatar>
+    <ProfileButton :size="150" :username="$route.params.username" />
     <div class="position pl-5">
       <div class="font-weight-bold mb-3">
         {{ $storage.pull($variables.NAME) }}
@@ -39,9 +37,10 @@
 </template>
 
 <script>
+import ProfileButton from "../header_additions/ProfileButton.vue";
 import Others from "./settings/Others.vue";
 export default {
-  components: { Others },
+  components: { Others, ProfileButton },
   props: {
     isAuthUser: {
       type: Boolean,

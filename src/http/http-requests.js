@@ -12,5 +12,6 @@ export const http_requests = {
     DELETE_NOTE:                'delete-note',
     GET_FOLLOWED_DEPARTMENTS:   'followed-departments',
     FOLLOW_DEPARTMENTS:         'follow-departments',
-    DONT_FOLLOW_DEPARTMENT:     'dont-follow-department'
+    DONT_FOLLOW_DEPARTMENT:     'dont-follow-department',
+    EDIT_PROFILE:               'edit-profile'
 }
